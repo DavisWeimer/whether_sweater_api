@@ -10,14 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_22_212851) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_22_222315) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "forecasts", force: :cascade do |t|
-    t.jsonb "data", default: {}
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.json "current_weather"
+    t.jsonb "daily_weather"
+    t.jsonb "hourly_weather"
   end
 
 end
