@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "Forecasts", type: :request do
-  describe "GET /index" do
+  describe "GET /show" do
     it "retrieves weather for a city", :vcr do
       get api_v0_forecast_path("cincinatti,oh")
 
