@@ -11,8 +11,20 @@ RSpec.describe "Users", type: :request do
         "email": user.email,
         "password": user.password
       }
-      require 'pry'; binding.pry
-      post api_v0_sessions_path
+      post api_v0_sessions_path, params: user_login.to_json, headers: { 'Content-Type' => 'application/json', 'Accept' => 'application/json' }
+      expect(response).to have_http_status(:ok)
+      session = JSON.parse(response.body)
+      
+      expect(session).to have_key(:data)
+      expect(session[:data]).to have_key(:type)
+      expect(session[:data]).to have_key(:id)
+      expect(session[:data]).to have_key(:attributes)
+      expect(session[:data][:type]).to eq("users")
+      expect(session[:data][:attributes]).to have_key(:email)
+      expect(session[:data][:attributes][:email]).to be_a(String)
+      expect(session[:data][:attributes]).to have_key(:api_key)
+      expect(session[:data][:attributes][:api_key]).to be_a(String)
+      expect(session[:data][:attributes]).not_to have_key(:password)
     end
   end
 end
