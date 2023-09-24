@@ -6,10 +6,12 @@ class LocationService
   end
 
   def self.find_location_coordinates(location)
-    response = conn.get do |req|
-      req.url "geocoding/v1/address", location: location
+    cached_coords = Rails.cache.fetch("location_#{location}", expires_in: 12.hours) do
+      response = conn.get do |req|
+        req.url "geocoding/v1/address", location: location
+      end
+      JSON.parse(response.body, symbolize_names: true)
     end
-    JSON.parse(response.body, symbolize_names: true)
   end
 
   def self.find_road_trip_travel_time(start, finish)
