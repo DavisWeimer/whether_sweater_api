@@ -15,6 +15,7 @@ class Api::V0::RoadTripsController < ApplicationController
 
     if road_trip_time == "Impossible"
       arrival_hour = "Impossible"
+      forecast = "N/A"
     else
       arrival_hour = arrival_time_hour(road_trip_time)
       destination_coords = LocationFacade.location_coordinates(road_trip_params[:destination])
