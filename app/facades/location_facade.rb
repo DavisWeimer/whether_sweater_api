@@ -7,4 +7,8 @@ class LocationFacade
       }
     end.first
   end
+
+  def self.road_trip_travel_time(start, finish)
+    LocationService.find_road_trip_travel_time(start, finish)[:route][:formattedTime]
+  end
 end

@@ -11,4 +11,11 @@ class WeatherService
     end
     JSON.parse(response.body, symbolize_names: true)
   end
+
+  def self.destination_weather(destination, time)
+    response = conn.get do |req|
+      req.url "/v1/forecast.json", q: destination.values.join(', '), hour: time
+    end
+    JSON.parse(response.body, symbolize_names: true)
+  end
 end

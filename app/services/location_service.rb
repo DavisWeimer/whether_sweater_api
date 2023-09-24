@@ -11,4 +11,11 @@ class LocationService
     end
     JSON.parse(response.body, symbolize_names: true)
   end
+
+  def self.find_road_trip_travel_time(start, finish)
+    response = conn.get("directions/v2/route") do |req|
+      req.url "directions/v2/route", from: start, to: finish
+    end
+    JSON.parse(response.body, symbolize_names: true)
+  end
 end
