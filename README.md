@@ -22,7 +22,7 @@ Getting Started
 -------------
 To get a local copy, follow these steps
 
-### <b>Installation</b>
+## <b>Installation</b>
 
 1. Fork the Project
 2. Clone the repo (SSH) 
@@ -45,8 +45,8 @@ rails s
 ```bash
 http://localhost:3000/
 ```
-### <b>Endpoints Available</b>
-1. Get weather for a city
+## <b>Endpoints Available</b>
+### 1. Get weather for a city
 Request:
 ```ruby
 GET /api/v0/forecast?location=cincinatti,oh
@@ -60,44 +60,117 @@ Response:
         "id": "null",
         "type": "forecast",
         "attributes": {
-            "current_weather": {
-                "last_updated": "2023-09-24 12:00",
-                "temperature": 62.6,
-               <etc...>
+                "current_weather": {
+                    "last_updated": "2023-09-24 12:00",
+                    "temperature": 62.6,
+                    etc
             },
             "daily_weather": [
                 {
                     "date": "2023-09-24",
                     "sunrise": "06:49 AM",
-                 etc
+                     etc
                 },
                 {...} etc
             ],
             "hourly_weather": [
-              {
+                {
                     "time": "00:00",
                     "temperature": 62.4,
                     etc
-              },
-              {...} etc
+                },
+                {...} etc
             ]
+            }
+      }
+}
+```
+### 2. User Registration
+Request:
+```ruby
+POST /api/v0/users
+Content-Type: application/json
+Accept: application/json
+
+{
+  "email": "whatever@example.com",
+  "password": "password",
+  "password_confirmation": "password"
+}
+```
+Response:
+`status: 201`<br>
+Body:
+```json
+{
+  "data": {
+    "type": "users",
+    "id": "1",
+    "attributes": {
+      "email": "whatever@example.com",
+      "api_key": "t1h2i3s4_i5s6_l7e8g9i10t11"
     }
   }
 }
 ```
-2. Get One Market
+### 3. Login
+Request:
 ```ruby
-GET /api/v0/markets/:id
+POST /api/v0/sessions
+Content-Type: application/json
+Accept: application/json
+
+{
+  "email": "whatever@example.com",
+  "password": "password"
+}
 ```
-3. Get All Vendors for a Market
-```ruby
-GET /api/v0/markets/:id/vendors
+Response:
+`status: 200`
+Body:
+```json
+{
+  "data": {
+    "type": "users",
+    "id": "1",
+    "attributes": {
+      "email": "whatever@example.com",
+      "api_key": "t1h2i3s4_i5s6_l7e8g9i10t11"
+    }
+  }
+}
 ```
-4. Get One Vendor
+### 4. Create Road Trip
+Request:
 ```ruby
-GET /api/v0/vendors/:id
+POST /api/v0/road_trip
+Content-Type: application/json
+Accept: application/json
+
+body:
+
+{
+  "origin": "Cincinatti,OH",
+  "destination": "Chicago,IL",
+  "api_key": "t1h2i3s4_i5s6_l7e8g9i10t11"
+}
 ```
-5. Create a Vendor
-```ruby
-POST /api/v0/vendors
+Response:
+```json
+{
+    "data": {
+        "id": "null",
+        "type": "road_trip",
+        "attributes": {
+            "start_city": "Cincinatti, OH",
+            "end_city": "Chicago, IL",
+            "travel_time": "04:40:45",
+            "weather_at_eta": {
+                "datetime": "2023-04-07 23:00",
+                "temperature": 44.2,
+                "condition": "Cloudy with a chance of meatballs"
+            }
+        }
+    }
+}
 ```
