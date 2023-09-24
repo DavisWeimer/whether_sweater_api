@@ -81,7 +81,7 @@ RSpec.describe "Api::V0::RoadTrips", type: :request do
     
       post api_v0_road_trips_path, params: road_trippin.to_json, headers: { 'Content-Type' => 'application/json', 'Accept' => 'application/json' }
       expect(response).to have_http_status(:ok)
-      require 'pry'; binding.pry
+      
       road_trip = JSON.parse(response.body, symbolize_names: true)
       expect(road_trip[:data][:attributes][:travel_time]).to eq("Impossible")
       expect(road_trip[:data][:attributes][:weather_at_eta]).to eq("N/A")

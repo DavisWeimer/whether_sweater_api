@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe "Forecasts", type: :request do
   describe "GET /show" do
     it "retrieves weather for a city", :vcr do
-      get api_v0_forecast_path("cincinatti,oh")
+      get "/api/v0/forecast?location=cincinatti,oh"
 
       expect(response).to be_successful
 
