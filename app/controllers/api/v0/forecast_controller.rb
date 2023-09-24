@@ -4,6 +4,6 @@ class Api::V0::ForecastController < ApplicationController
 
     forecast = WeatherFacade.get_weather_5_days(location_coords)
     
-    render json: ForecastSerializer.weather_information(forecast)
+    render json: ForecastSerializer.weather_information(forecast, params[:units])
   end
 end
