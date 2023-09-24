@@ -19,7 +19,7 @@ class Api::V0::RoadTripsController < ApplicationController
     else
       arrival_hour = arrival_time_hour(road_trip_time)
       destination_coords = LocationFacade.location_coordinates(road_trip_params[:destination])
-      forecast = WeatherFacade.get_destination_weather(destination_coords, arrival_hour)
+      forecast = WeatherFacade.get_destination_weather(destination_coords, arrival_hour, params[:units])
     end
     render json: RoadTripsSerializer.format_road_trip(road_trip_params[:origin], road_trip_params[:destination], road_trip_time, forecast), status: :ok
   end
@@ -27,7 +27,7 @@ class Api::V0::RoadTripsController < ApplicationController
   private
 
   def road_trip_params
-    params.permit(:origin, :destination, :api_key)
+    params.permit(:origin, :destination, :api_key, :units)
   end
 
   def arrival_time_hour(time)
