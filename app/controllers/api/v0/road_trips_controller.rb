@@ -10,23 +10,13 @@ class Api::V0::RoadTripsController < ApplicationController
       render json: { error: "Unauthorized" }, status: :unauthorized
       return
     end
-    
-    road_trip_time = LocationFacade.road_trip_travel_time(road_trip_params[:origin], road_trip_params[:destination])
-    if road_trip_time.success?
-      destination_coords = LocationFacade.location_coordinates(road_trip_params[:destination])
-      arrival_hour = arrival_time_hour(road_trip_time)
-      forecast = WeatherFacade.get_destination_weather(destination_coords, arrival_hour)
-      
-      require 'pry'; binding.pry
-      render json: RoadTripsSerializer.format_road_trip(road_trip_params[:origin], road_trip_params[:destination], road_trip_time, forecast), status: :ok
-    else
-      destination_coords = LocationFacade.location_coordinates(road_trip_params[:destination])
-      arrival_hour = arrival_time_hour(road_trip_time)
-      forecast = WeatherFacade.get_destination_weather(destination_coords, arrival_hour)
-      
-      render json: RoadTripsSerializer.format_road_trip(road_trip_params[:origin], road_trip_params[:destination], "impossible", forecast), status: :ok
-    end
 
+    road_trip_time = LocationFacade.road_trip_travel_time(road_trip_params[:origin], road_trip_params[:destination])
+    destination_coords = LocationFacade.location_coordinates(road_trip_params[:destination])
+    arrival_hour = arrival_time_hour(road_trip_time)
+    forecast = WeatherFacade.get_destination_weather(destination_coords, arrival_hour)
+      
+    render json: RoadTripsSerializer.format_road_trip(road_trip_params[:origin], road_trip_params[:destination], road_trip_time, forecast), status: :ok
   end
 
   private

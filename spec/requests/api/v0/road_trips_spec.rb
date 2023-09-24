@@ -16,8 +16,9 @@ RSpec.describe "Api::V0::RoadTrips", type: :request do
     
       post api_v0_road_trips_path, params: road_trippin.to_json, headers: { 'Content-Type' => 'application/json', 'Accept' => 'application/json' }
       expect(response).to have_http_status(:ok)
-  
+      
       road_trip = JSON.parse(response.body, symbolize_names: true)
+
       expect(road_trip).to have_key(:data)
       expect(road_trip[:data]).to have_key(:type)
       expect(road_trip[:data]).to have_key(:id)
@@ -36,7 +37,7 @@ RSpec.describe "Api::V0::RoadTrips", type: :request do
       expect(road_trip[:data][:attributes][:weather_at_eta]).to have_key(:temperature)
       expect(road_trip[:data][:attributes][:weather_at_eta][:temperature]).to be_a(Float)
       expect(road_trip[:data][:attributes][:weather_at_eta]).to have_key(:condition)
-      expect(road_trip[:data][:attributes][:weather_at_eta][:condition]).to be_a(Float)
+      expect(road_trip[:data][:attributes][:weather_at_eta][:condition]).to be_a(String)
     end
   end
 end

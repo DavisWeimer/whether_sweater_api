@@ -9,6 +9,11 @@ class LocationFacade
   end
 
   def self.road_trip_travel_time(start, finish)
-    LocationService.find_road_trip_travel_time(start, finish)[:route][:formattedTime]
+    time = LocationService.find_road_trip_travel_time(start, finish)
+    if time[:route].key?(:sessionId)
+      time[:route][:formattedTime]
+    else
+      "Impossible"
+    end
   end
 end
