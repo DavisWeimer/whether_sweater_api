@@ -712,4 +712,76 @@ http_interactions:
         Gibbous","moon_illumination":"63","is_moon_up":1,"is_sun_up":0},"hour":[{"time_epoch":1695585600,"time":"2023-09-24
         15:00","temp_c":19.0,"temp_f":66.2,"is_day":1,"condition":{"text":"Overcast","icon":"//cdn.weatherapi.com/weather/64x64/day/122.png","code":1009},"wind_mph":7.8,"wind_kph":12.6,"wind_degree":80,"wind_dir":"E","pressure_mb":1016.0,"pressure_in":30.02,"precip_mm":0.0,"precip_in":0.0,"humidity":87,"cloud":97,"feelslike_c":19.0,"feelslike_f":66.2,"windchill_c":19.0,"windchill_f":66.2,"heatindex_c":19.0,"heatindex_f":66.2,"dewpoint_c":16.8,"dewpoint_f":62.2,"will_it_rain":0,"chance_of_rain":0,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":10.7,"gust_kph":17.2,"uv":4.0}]}]}}'
   recorded_at: Sun, 24 Sep 2023 17:36:12 GMT
+- request:
+    method: get
+    uri: http://api.weatherapi.com/v1/forecast.json?hour=16&key=<WEATHER KEY>&q=41.88425,%20-87.63245
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.11
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 24 Sep 2023 17:39:13 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      Server:
+      - BunnyCDN-IL1-1069
+      Cdn-Pullzone:
+      - '93447'
+      Cdn-Uid:
+      - 8fa3a04a-75d9-4707-8056-b7b33c8ac7fe
+      Cdn-Requestcountrycode:
+      - US
+      Age:
+      - '0'
+      Cache-Control:
+      - public, max-age=180
+      Via:
+      - 1.1 varnish (Varnish/6.0)
+      X-Varnish:
+      - '236589544'
+      Cdn-Proxyver:
+      - '1.04'
+      Cdn-Requestpullsuccess:
+      - 'True'
+      Cdn-Requestpullcode:
+      - '200'
+      Cdn-Cachedat:
+      - '09/24/2023 17:39:13'
+      Cdn-Edgestorageid:
+      - '718'
+      Cdn-Status:
+      - '200'
+      Cdn-Requestid:
+      - 90f2a8f8db495776e3c50a8588dec38f
+      Cdn-Cache:
+      - MISS
+    body:
+      encoding: ASCII-8BIT
+      string: '{"location":{"name":"Chicago","region":"Illinois","country":"United
+        States of America","lat":41.88,"lon":-87.63,"tz_id":"America/Chicago","localtime_epoch":1695577104,"localtime":"2023-09-24
+        12:38"},"current":{"last_updated_epoch":1695576600,"last_updated":"2023-09-24
+        12:30","temp_c":22.2,"temp_f":72.0,"is_day":1,"condition":{"text":"Partly
+        cloudy","icon":"//cdn.weatherapi.com/weather/64x64/day/116.png","code":1003},"wind_mph":2.2,"wind_kph":3.6,"wind_degree":118,"wind_dir":"ESE","pressure_mb":1017.0,"pressure_in":30.02,"precip_mm":0.0,"precip_in":0.0,"humidity":55,"cloud":75,"feelslike_c":24.6,"feelslike_f":76.3,"vis_km":16.0,"vis_miles":9.0,"uv":5.0,"gust_mph":8.7,"gust_kph":14.1},"forecast":{"forecastday":[{"date":"2023-09-24","date_epoch":1695513600,"day":{"maxtemp_c":20.3,"maxtemp_f":68.5,"mintemp_c":15.5,"mintemp_f":59.9,"avgtemp_c":17.9,"avgtemp_f":64.3,"maxwind_mph":13.0,"maxwind_kph":20.9,"totalprecip_mm":0.0,"totalprecip_in":0.0,"totalsnow_cm":0.0,"avgvis_km":10.0,"avgvis_miles":6.0,"avghumidity":88.0,"daily_will_it_rain":0,"daily_chance_of_rain":0,"daily_will_it_snow":0,"daily_chance_of_snow":0,"condition":{"text":"Partly
+        cloudy","icon":"//cdn.weatherapi.com/weather/64x64/day/116.png","code":1003},"uv":5.0},"astro":{"sunrise":"06:40
+        AM","sunset":"06:44 PM","moonrise":"04:27 PM","moonset":"12:14 AM","moon_phase":"Waxing
+        Gibbous","moon_illumination":"63","is_moon_up":1,"is_sun_up":0},"hour":[{"time_epoch":1695589200,"time":"2023-09-24
+        16:00","temp_c":18.9,"temp_f":66.0,"is_day":1,"condition":{"text":"Overcast","icon":"//cdn.weatherapi.com/weather/64x64/day/122.png","code":1009},"wind_mph":7.2,"wind_kph":11.5,"wind_degree":76,"wind_dir":"ENE","pressure_mb":1016.0,"pressure_in":30.01,"precip_mm":0.0,"precip_in":0.0,"humidity":90,"cloud":100,"feelslike_c":18.9,"feelslike_f":66.0,"windchill_c":18.9,"windchill_f":66.0,"heatindex_c":18.9,"heatindex_f":66.0,"dewpoint_c":17.3,"dewpoint_f":63.1,"will_it_rain":0,"chance_of_rain":0,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":10.4,"gust_kph":16.8,"uv":4.0}]}]}}'
+  recorded_at: Sun, 24 Sep 2023 17:39:13 GMT
 recorded_with: VCR 6.2.0
