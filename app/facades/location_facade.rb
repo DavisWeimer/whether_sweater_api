@@ -7,4 +7,13 @@ class LocationFacade
       }
     end.first
   end
+
+  def self.road_trip_travel_time(start, finish)
+    time = LocationService.find_road_trip_travel_time(start, finish)
+    if time[:route].key?(:sessionId)
+      time[:route][:formattedTime]
+    else
+      "Impossible"
+    end
+  end
 end
