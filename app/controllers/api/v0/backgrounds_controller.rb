@@ -1,7 +1,13 @@
-class Api::V0::BackgroundsController < ApplicationController
-  def index
-    backgrounds = PhotoFacade.photos_by_location_title(params[:location])
+# frozen_string_literal: true
 
-    render json: PhotoSerializer.format_photo(backgrounds, params[:location])
+module Api
+  module V0
+    class BackgroundsController < ApplicationController
+      def index
+        backgrounds = PhotoFacade.photos_by_location_title(params[:location])
+
+        render json: PhotoSerializer.format_photo(backgrounds, params[:location])
+      end
+    end
   end
 end
