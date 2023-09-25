@@ -65,5 +65,19 @@ RSpec.describe "BookSearches", type: :request do
       expect(error).to have_key(:error)
       expect(error[:error]).to eq("Missing parameters")
     end
+
+    it "can't get no dang books if the location is misspelled or non-existent!", :vcr do
+      incorrect_params = {
+        location: "benver,c1",
+        quantity: 5
+      }
+      get api_v0_book_search_path, params: incorrect_params , headers: { 'Content-Type' => 'application/json', 'Accept' => 'application/json' }
+
+      expect(response).to have_http_status(:unprocessable_entity)
+      
+      error = JSON.parse(response.body, symbolize_names: true)
+      expect(error).to have_key(:error)
+      expect(error[:error]).to eq("Incorrect/Non-Existent city info")
+    end
   end
 end

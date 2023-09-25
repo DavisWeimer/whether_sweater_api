@@ -6,6 +6,11 @@ class Api::V0::BookSearchController < ApplicationController
     end
     
     books = BookFacade.books_by_location_title(params[:location], params[:quantity])
+    unless books[:numFound] > 0
+      render json: { error: "Incorrect/Non-Existent city info"}, status: :unprocessable_entity
+      return
+    end
+
     location_coords = LocationFacade.location_coordinates(params[:location])
     forecast = WeatherFacade.get_destination_weather(location_coords, arrival = "don't worry about it..")
 
