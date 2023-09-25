@@ -1,7 +1,7 @@
 class PhotoService
   def self.conn
     @conn ||= Faraday.new(url: 'https://api.unsplash.com') do |faraday|
-      faraday.params['key'] = Rails.application.credentials.unsplash[:access_key]
+      faraday.params['client_id'] = Rails.application.credentials.unsplash[:access_key]
     end
   end
 

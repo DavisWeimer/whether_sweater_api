@@ -16,8 +16,8 @@ RSpec.describe "Backgrounds", type: :request do
 
       # image
       expect(background[:data][:attributes][:image]).to be_a(Hash)
-      expect(background[:data][:attributes][:image]).to have_key(:loaction)
-      expect(background[:data][:attributes][:image][:loaction]).to be_a(String)
+      expect(background[:data][:attributes][:image]).to have_key(:location)
+      expect(background[:data][:attributes][:image][:location]).to be_a(String)
       expect(background[:data][:attributes][:image]).to have_key(:image_url)
       expect(background[:data][:attributes][:image][:image_url]).to be_a(String)
       expect(background[:data][:attributes][:image]).to have_key(:credit)
@@ -28,8 +28,8 @@ RSpec.describe "Backgrounds", type: :request do
       expect(background[:data][:attributes][:image][:credit][:source]).to be_a(String)
       expect(background[:data][:attributes][:image][:credit]).to have_key(:author)
       expect(background[:data][:attributes][:image][:credit][:author]).to be_a(String)
-      expect(background[:data][:attributes][:image][:credit]).to have_key(:logo)
-      expect(background[:data][:attributes][:image][:credit][:logo]).to be_a(String)
+      expect(background[:data][:attributes][:image][:credit]).to have_key(:portfolio)
+      expect(background[:data][:attributes][:image][:credit][:portfolio]).to be_a(String)
     end 
   end
 end
