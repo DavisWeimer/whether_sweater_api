@@ -78,6 +78,8 @@ VCR.configure do |config|
   config.hook_into :webmock
   config.filter_sensitive_data('<WEATHER KEY>') { Rails.application.credentials.weather[:key] }
   config.filter_sensitive_data('<MAP QUEST KEY>') { Rails.application.credentials.map_quest[:key] }
+  config.filter_sensitive_data('<UNSPLASH CLIENT KEY>') { Rails.application.credentials.unsplash[:access_key] }
+  config.filter_sensitive_data('<UNSPLASH SERCRET KEY>') { Rails.application.credentials.unsplash[:secret_key] }
   config.default_cassette_options = { record: :new_episodes }
   config.configure_rspec_metadata!
 end
