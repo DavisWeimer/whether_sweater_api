@@ -7,7 +7,7 @@ class ForecastSerializer
 
     {
       data: {
-        id: "null",
+        id: nil,
         type: "forecast",
         attributes: {
           current_weather: {

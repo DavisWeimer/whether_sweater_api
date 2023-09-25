@@ -9,7 +9,7 @@ RSpec.describe "Forecasts", type: :request do
 
       forecast = JSON.parse(response.body, symbolize_names: true)
 
-      expect(forecast[:data][:id]).to eq("null")
+      expect(forecast[:data][:id]).to eq(nil)
       expect(forecast[:data][:type]).to eq("forecast")
 
       ### current_weather

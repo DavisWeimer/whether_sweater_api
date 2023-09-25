@@ -4,7 +4,7 @@ class BookService
   end
 
   def self.find_books_by_location_title(location, limit)
-    cached_books = Rails.cache.fetch("books_about_#{location}", expires_in: 12.hours) do
+    cached_books = Rails.cache.fetch("books:#{location}_qty:#{limit}", expires_in: 12.hours) do
       response = conn.get do |req|
         req.url "search.json", title: location, limit: limit
       end
