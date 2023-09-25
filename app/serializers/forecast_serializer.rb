@@ -1,9 +1,9 @@
 class ForecastSerializer
-  def self.weather_information(forecast, units = "imperial")
-    temperature_key = units == "imperial" ? :temp_f : :temp_c
-    feels_like_key = units == "imperial" ? :feelslike_f : :feelslike_c
-    max_temp_key = units == "imperial" ? :maxtemp_f : :maxtemp_c
-    min_temp_key = units == "imperial" ? :mintemp_f : :mintemp_c
+  def self.weather_information(forecast, units = "not metric lol")
+    temperature_key = units == "metric" ? :temp_c : :temp_f
+    feels_like_key = units == "metric" ? :feelslike_c : :feelslike_f
+    max_temp_key = units == "metric" ? :maxtemp_c : :maxtemp_f
+    min_temp_key = units == "metric" ? :mintemp_c : :mintemp_f
 
     {
       data: {

@@ -11,8 +11,8 @@ class WeatherFacade
 
   private
 
-  def self.serialize_weather(weather, units = "imperial")
-    temperature_key = units == "imperial" ? :temp_f : :temp_c
+  def self.serialize_weather(weather, units = "not metric")
+    temperature_key = units == "metric" ? :temp_c : :temp_f
 
     {
       datetime: weather[:location][:localtime],
