@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
   namespace :api do
     namespace :v0 do
@@ -5,7 +7,8 @@ Rails.application.routes.draw do
       resources :users, only: [:create]
       resources :sessions, only: [:create]
       resources :road_trips, only: [:create]
+      get '/book-search', to: 'book_search#show'
+      resources :backgrounds, only: [:index]
     end
   end
-end  
-
+end

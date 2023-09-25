@@ -1,17 +1,19 @@
+# frozen_string_literal: true
+
 class ForecastSerializer
-  def self.weather_information(forecast, units = "not metric lol")
-    temperature_key = units == "metric" ? :temp_c : :temp_f
-    feels_like_key = units == "metric" ? :feelslike_c : :feelslike_f
-    max_temp_key = units == "metric" ? :maxtemp_c : :maxtemp_f
-    min_temp_key = units == "metric" ? :mintemp_c : :mintemp_f
+  def self.weather_information(forecast, units = 'not metric lol')
+    temperature_key = units == 'metric' ? :temp_c : :temp_f
+    feels_like_key = units == 'metric' ? :feelslike_c : :feelslike_f
+    max_temp_key = units == 'metric' ? :maxtemp_c : :maxtemp_f
+    min_temp_key = units == 'metric' ? :mintemp_c : :mintemp_f
 
     {
       data: {
-        id: "null",
-        type: "forecast",
+        id: nil,
+        type: 'forecast',
         attributes: {
           current_weather: {
-            last_updated: forecast[:current][:last_updated], 
+            last_updated: forecast[:current][:last_updated],
             temperature: forecast[:current][temperature_key],
             feels_like: forecast[:current][feels_like_key],
             humidity: forecast[:current][:humidity],

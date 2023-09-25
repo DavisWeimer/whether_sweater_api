@@ -1,0 +1,484 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://openlibrary.org/search.json?limit=5&title=denver,co
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.11
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.18.0 (Ubuntu)
+      Date:
+      - Mon, 25 Sep 2023 15:40:17 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Method:
+      - GET, OPTIONS
+      Access-Control-Max-Age:
+      - '86400'
+      X-Ol-Stats:
+      - '"SR 1 0.053 TT 0 0.054"'
+      Referrer-Policy:
+      - no-referrer-when-downgrade
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+            "numFound": 45,
+            "start": 0,
+            "numFoundExact": true,
+            "docs": [
+                {
+                    "key": "/works/OL8503198W",
+                    "type": "work",
+                    "seed": [
+                        "/books/OL10909613M",
+                        "/works/OL8503198W",
+                        "/authors/OL2843451A"
+                    ],
+                    "title": "Denver, Co",
+                    "title_suggest": "Denver, Co",
+                    "title_sort": "Denver, Co",
+                    "edition_count": 1,
+                    "edition_key": [
+                        "OL10909613M"
+                    ],
+                    "publish_date": [
+                        "January 2001"
+                    ],
+                    "publish_year": [
+                        2001
+                    ],
+                    "first_publish_year": 2001,
+                    "isbn": [
+                        "0762507845",
+                        "9780762507849"
+                    ],
+                    "last_modified_i": 1338943517,
+                    "ebook_count_i": 0,
+                    "ebook_access": "no_ebook",
+                    "has_fulltext": false,
+                    "public_scan_b": false,
+                    "publisher": [
+                        "Universal Map Enterprises"
+                    ],
+                    "language": [
+                        "eng"
+                    ],
+                    "author_key": [
+                        "OL2843451A"
+                    ],
+                    "author_name": [
+                        "Universal Map"
+                    ],
+                    "publisher_facet": [
+                        "Universal Map Enterprises"
+                    ],
+                    "_version_": 1767942895778660352,
+                    "author_facet": [
+                        "OL2843451A Universal Map"
+                    ]
+                },
+                {
+                    "key": "/works/OL896607W",
+                    "type": "work",
+                    "seed": [
+                        "/books/OL10945157M",
+                        "/works/OL896607W",
+                        "/authors/OL79165A"
+                    ],
+                    "title": "Denver west, CO and Bailey, CO: Denver, CO",
+                    "title_suggest": "Denver west, CO and Bailey, CO: Denver, CO",
+                    "title_sort": "Denver west, CO and Bailey, CO: Denver, CO",
+                    "subtitle": "39105, digital raster graphic data",
+                    "edition_count": 1,
+                    "edition_key": [
+                        "OL10945157M"
+                    ],
+                    "publish_date": [
+                        "1996"
+                    ],
+                    "publish_year": [
+                        1996
+                    ],
+                    "first_publish_year": 1996,
+                    "isbn": [
+                        "9780607620054",
+                        "0607620056"
+                    ],
+                    "last_modified_i": 1272517172,
+                    "ebook_count_i": 0,
+                    "ebook_access": "no_ebook",
+                    "has_fulltext": false,
+                    "public_scan_b": false,
+                    "publisher": [
+                        "USGS Branch of Distribution"
+                    ],
+                    "language": [
+                        "eng"
+                    ],
+                    "author_key": [
+                        "OL79165A"
+                    ],
+                    "author_name": [
+                        "United States Geological Survey"
+                    ],
+                    "author_alternative_name": [
+                        "Geological Survey (U. S.)",
+                        "Geological Survey (U.S.) 088",
+                        "United States. Geological survey.",
+                        "United States. Geological Survey",
+                        "U.S. Geological Survey",
+                        "Geological Survey. (U.S.)",
+                        "Geological Survey (U .S.)",
+                        "Geological Survey (U.S.)",
+                        "United States. Geological Survey."
+                    ],
+                    "publisher_facet": [
+                        "USGS Branch of Distribution"
+                    ],
+                    "_version_": 1767943587095379970,
+                    "author_facet": [
+                        "OL79165A United States Geological Survey"
+                    ]
+                },
+                {
+                    "key": "/works/OL896605W",
+                    "type": "work",
+                    "seed": [
+                        "/books/OL10945156M",
+                        "/works/OL896605W",
+                        "/authors/OL79165A"
+                    ],
+                    "title": "Denver East, CO and Castle Rock, CO: Denver, CO",
+                    "title_suggest": "Denver East, CO and Castle Rock, CO: Denver, CO",
+                    "title_sort": "Denver East, CO and Castle Rock, CO: Denver, CO",
+                    "subtitle": "39104, digital raster graphic data",
+                    "edition_count": 1,
+                    "edition_key": [
+                        "OL10945156M"
+                    ],
+                    "publish_date": [
+                        "1996"
+                    ],
+                    "publish_year": [
+                        1996
+                    ],
+                    "first_publish_year": 1996,
+                    "isbn": [
+                        "0607620048",
+                        "9780607620047"
+                    ],
+                    "last_modified_i": 1272517172,
+                    "ebook_count_i": 0,
+                    "ebook_access": "no_ebook",
+                    "has_fulltext": false,
+                    "public_scan_b": false,
+                    "publisher": [
+                        "USGS Branch of Distribution"
+                    ],
+                    "language": [
+                        "eng"
+                    ],
+                    "author_key": [
+                        "OL79165A"
+                    ],
+                    "author_name": [
+                        "United States Geological Survey"
+                    ],
+                    "author_alternative_name": [
+                        "Geological Survey (U. S.)",
+                        "Geological Survey (U.S.) 088",
+                        "United States. Geological survey.",
+                        "United States. Geological Survey",
+                        "U.S. Geological Survey",
+                        "Geological Survey. (U.S.)",
+                        "Geological Survey (U .S.)",
+                        "Geological Survey (U.S.)",
+                        "United States. Geological Survey."
+                    ],
+                    "publisher_facet": [
+                        "USGS Branch of Distribution"
+                    ],
+                    "_version_": 1767943587270492162,
+                    "author_facet": [
+                        "OL79165A United States Geological Survey"
+                    ]
+                },
+                {
+                    "key": "/works/OL31554740W",
+                    "type": "work",
+                    "seed": [
+                        "/books/OL7772425M",
+                        "/works/OL31554740W"
+                    ],
+                    "title": "Denver Regional, CO",
+                    "title_suggest": "Denver Regional, CO",
+                    "title_sort": "Denver Regional, CO",
+                    "edition_count": 1,
+                    "edition_key": [
+                        "OL7772425M"
+                    ],
+                    "publish_date": [
+                        "June 1994"
+                    ],
+                    "publish_year": [
+                        1994
+                    ],
+                    "first_publish_year": 1994,
+                    "isbn": [
+                        "9780528952715",
+                        "0528952714"
+                    ],
+                    "last_modified_i": 1670927738,
+                    "ebook_count_i": 1,
+                    "ebook_access": "borrowable",
+                    "has_fulltext": true,
+                    "public_scan_b": false,
+                    "ia": [
+                        "denverregionalcl0000pier"
+                    ],
+                    "ia_collection": [
+                        "inlibrary",
+                        "internetarchivebooks",
+                        "printdisabled"
+                    ],
+                    "ia_collection_s": "inlibrary;internetarchivebooks;printdisabled",
+                    "lending_edition_s": "OL7772425M",
+                    "lending_identifier_s": "denverregionalcl0000pier",
+                    "printdisabled_s": "OL7772425M",
+                    "cover_edition_key": "OL7772425M",
+                    "cover_i": 13060547,
+                    "publisher": [
+                        "Rand McNally & Company"
+                    ],
+                    "id_librarything": [
+                        "9032702"
+                    ],
+                    "ia_box_id": [
+                        "IA40452109"
+                    ],
+                    "publisher_facet": [
+                        "Rand McNally & Company"
+                    ],
+                    "_version_": 1767927443616694273
+                },
+                {
+                    "key": "/works/OL4437736W",
+                    "type": "work",
+                    "seed": [
+                        "/books/OL10911511M",
+                        "/works/OL4437736W",
+                        "/authors/OL882946A"
+                    ],
+                    "title": "Denver Co Deluxe Flip Map",
+                    "title_suggest": "Denver Co Deluxe Flip Map",
+                    "title_sort": "Denver Co Deluxe Flip Map",
+                    "edition_count": 1,
+                    "edition_key": [
+                        "OL10911511M"
+                    ],
+                    "publish_date": [
+                        "January 2003"
+                    ],
+                    "publish_year": [
+                        2003
+                    ],
+                    "first_publish_year": 2003,
+                    "isbn": [
+                        "0762557362",
+                        "9780762557363"
+                    ],
+                    "last_modified_i": 1260838560,
+                    "ebook_count_i": 0,
+                    "ebook_access": "no_ebook",
+                    "has_fulltext": false,
+                    "public_scan_b": false,
+                    "publisher": [
+                        "Universal Map Enterprises"
+                    ],
+                    "language": [
+                        "eng"
+                    ],
+                    "author_key": [
+                        "OL882946A"
+                    ],
+                    "author_name": [
+                        "Laura Ryder"
+                    ],
+                    "publisher_facet": [
+                        "Universal Map Enterprises"
+                    ],
+                    "_version_": 1767935634853330944,
+                    "author_facet": [
+                        "OL882946A Laura Ryder"
+                    ]
+                }
+            ],
+            "num_found": 45,
+            "q": "",
+            "offset": null
+        }
+  recorded_at: Mon, 25 Sep 2023 15:40:17 GMT
+- request:
+    method: get
+    uri: https://www.mapquestapi.com/geocoding/v1/address?key=<MAP QUEST KEY>&location=denver,co
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.11
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 25 Sep 2023 15:54:07 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '797'
+      Connection:
+      - keep-alive
+      X-Ratelimit-Limit-2628000:
+      - '15000'
+      X-Ratelimit-Remaining-2628000:
+      - '14890'
+      Ratelimit-Limit:
+      - '15000'
+      Ratelimit-Remaining:
+      - '14890'
+      Ratelimit-Reset:
+      - '2030753'
+      X-Powered-By:
+      - MapQuest
+      X-Request-Id:
+      - c2a4db60-5bbb-11ee-88fb-5d30dc24e6e2
+      Access-Control-Allow-Origin:
+      - "*"
+      Etag:
+      - W/"31d-e6U4VUsIusqpoCnMOLAMG4TFeGE"
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJpbmZvIjp7InN0YXR1c2NvZGUiOjAsImNvcHlyaWdodCI6eyJ0ZXh0IjoiwqkgMjAyMyBNYXBRdWVzdCwgSW5jLiIsImltYWdlVXJsIjoiaHR0cDovL2FwaS5tcWNkbi5jb20vcmVzL21xbG9nby5naWYiLCJpbWFnZUFsdFRleHQiOiLCqSAyMDIzIE1hcFF1ZXN0LCBJbmMuIn0sIm1lc3NhZ2VzIjpbXX0sIm9wdGlvbnMiOnsibWF4UmVzdWx0cyI6LTEsImlnbm9yZUxhdExuZ0lucHV0IjpmYWxzZX0sInJlc3VsdHMiOlt7InByb3ZpZGVkTG9jYXRpb24iOnsibG9jYXRpb24iOiJkZW52ZXIsY28ifSwibG9jYXRpb25zIjpbeyJzdHJlZXQiOiIiLCJhZG1pbkFyZWE2IjoiIiwiYWRtaW5BcmVhNlR5cGUiOiJOZWlnaGJvcmhvb2QiLCJhZG1pbkFyZWE1IjoiRGVudmVyIiwiYWRtaW5BcmVhNVR5cGUiOiJDaXR5IiwiYWRtaW5BcmVhNCI6IkRlbnZlciIsImFkbWluQXJlYTRUeXBlIjoiQ291bnR5IiwiYWRtaW5BcmVhMyI6IkNPIiwiYWRtaW5BcmVhM1R5cGUiOiJTdGF0ZSIsImFkbWluQXJlYTEiOiJVUyIsImFkbWluQXJlYTFUeXBlIjoiQ291bnRyeSIsInBvc3RhbENvZGUiOiIiLCJnZW9jb2RlUXVhbGl0eUNvZGUiOiJBNVhBWCIsImdlb2NvZGVRdWFsaXR5IjoiQ0lUWSIsImRyYWdQb2ludCI6ZmFsc2UsInNpZGVPZlN0cmVldCI6Ik4iLCJsaW5rSWQiOiIwIiwidW5rbm93bklucHV0IjoiIiwidHlwZSI6InMiLCJsYXRMbmciOnsibGF0IjozOS43NDAwMSwibG5nIjotMTA0Ljk5MjAyfSwiZGlzcGxheUxhdExuZyI6eyJsYXQiOjM5Ljc0MDAxLCJsbmciOi0xMDQuOTkyMDJ9LCJtYXBVcmwiOiIifV19XX0=
+  recorded_at: Mon, 25 Sep 2023 15:54:07 GMT
+- request:
+    method: get
+    uri: http://api.weatherapi.com/v1/forecast.json?hour=don%27t%20worry%20about%20it..&key=<WEATHER
+      KEY>&q=39.74001,%20-104.99202
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.11
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 25 Sep 2023 15:54:08 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      Server:
+      - BunnyCDN-IL1-1029
+      Cdn-Pullzone:
+      - '93447'
+      Cdn-Uid:
+      - 8fa3a04a-75d9-4707-8056-b7b33c8ac7fe
+      Cdn-Requestcountrycode:
+      - US
+      Age:
+      - '0'
+      Cache-Control:
+      - public, max-age=180
+      Via:
+      - 1.1 varnish (Varnish/6.0)
+      X-Varnish:
+      - '785780090'
+      Cdn-Proxyver:
+      - '1.04'
+      Cdn-Requestpullsuccess:
+      - 'True'
+      Cdn-Requestpullcode:
+      - '200'
+      Cdn-Cachedat:
+      - '09/25/2023 15:54:08'
+      Cdn-Edgestorageid:
+      - '894'
+      Cdn-Status:
+      - '200'
+      Cdn-Requestid:
+      - f459bd319f9167f5255afc2ae540fe05
+      Cdn-Cache:
+      - MISS
+    body:
+      encoding: ASCII-8BIT
+      string: '{"location":{"name":"Denver","region":"Colorado","country":"United
+        States of America","lat":39.74,"lon":-104.99,"tz_id":"America/Denver","localtime_epoch":1695657246,"localtime":"2023-09-25
+        9:54"},"current":{"last_updated_epoch":1695656700,"last_updated":"2023-09-25
+        09:45","temp_c":16.0,"temp_f":60.8,"is_day":1,"condition":{"text":"Sunny","icon":"//cdn.weatherapi.com/weather/64x64/day/113.png","code":1000},"wind_mph":5.6,"wind_kph":9.0,"wind_degree":200,"wind_dir":"SSW","pressure_mb":1026.0,"pressure_in":30.3,"precip_mm":0.0,"precip_in":0.0,"humidity":33,"cloud":0,"feelslike_c":16.0,"feelslike_f":60.8,"vis_km":16.0,"vis_miles":9.0,"uv":5.0,"gust_mph":2.6,"gust_kph":4.1},"forecast":{"forecastday":[{"date":"2023-09-25","date_epoch":1695600000,"day":{"maxtemp_c":28.1,"maxtemp_f":82.6,"mintemp_c":9.9,"mintemp_f":49.8,"avgtemp_c":20.3,"avgtemp_f":68.5,"maxwind_mph":6.9,"maxwind_kph":11.2,"totalprecip_mm":0.0,"totalprecip_in":0.0,"totalsnow_cm":0.0,"avgvis_km":10.0,"avgvis_miles":6.0,"avghumidity":24.0,"daily_will_it_rain":0,"daily_chance_of_rain":0,"daily_will_it_snow":0,"daily_chance_of_snow":0,"condition":{"text":"Sunny","icon":"//cdn.weatherapi.com/weather/64x64/day/113.png","code":1000},"uv":6.0},"astro":{"sunrise":"06:50
+        AM","sunset":"06:52 PM","moonrise":"05:12 PM","moonset":"01:52 AM","moon_phase":"Waxing
+        Gibbous","moon_illumination":"74","is_moon_up":1,"is_sun_up":1},"hour":[{"time_epoch":1695621600,"time":"2023-09-25
+        00:00","temp_c":15.8,"temp_f":60.4,"is_day":0,"condition":{"text":"Clear","icon":"//cdn.weatherapi.com/weather/64x64/night/113.png","code":1000},"wind_mph":3.1,"wind_kph":5.0,"wind_degree":230,"wind_dir":"SW","pressure_mb":1019.0,"pressure_in":30.09,"precip_mm":0.0,"precip_in":0.0,"humidity":37,"cloud":0,"feelslike_c":15.8,"feelslike_f":60.4,"windchill_c":15.8,"windchill_f":60.4,"heatindex_c":15.8,"heatindex_f":60.4,"dewpoint_c":1.3,"dewpoint_f":34.3,"will_it_rain":0,"chance_of_rain":0,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":5.6,"gust_kph":9.0,"uv":1.0},{"time_epoch":1695625200,"time":"2023-09-25
+        01:00","temp_c":17.1,"temp_f":62.7,"is_day":0,"condition":{"text":"Clear","icon":"//cdn.weatherapi.com/weather/64x64/night/113.png","code":1000},"wind_mph":2.9,"wind_kph":4.7,"wind_degree":228,"wind_dir":"SW","pressure_mb":1018.0,"pressure_in":30.06,"precip_mm":0.0,"precip_in":0.0,"humidity":24,"cloud":1,"feelslike_c":17.1,"feelslike_f":62.7,"windchill_c":17.1,"windchill_f":62.7,"heatindex_c":17.1,"heatindex_f":62.7,"dewpoint_c":-3.4,"dewpoint_f":26.0,"will_it_rain":0,"chance_of_rain":0,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":5.2,"gust_kph":8.4,"uv":1.0},{"time_epoch":1695628800,"time":"2023-09-25
+        02:00","temp_c":16.5,"temp_f":61.7,"is_day":0,"condition":{"text":"Clear","icon":"//cdn.weatherapi.com/weather/64x64/night/113.png","code":1000},"wind_mph":2.7,"wind_kph":4.3,"wind_degree":229,"wind_dir":"SW","pressure_mb":1018.0,"pressure_in":30.06,"precip_mm":0.0,"precip_in":0.0,"humidity":25,"cloud":7,"feelslike_c":16.5,"feelslike_f":61.7,"windchill_c":16.5,"windchill_f":61.7,"heatindex_c":16.5,"heatindex_f":61.7,"dewpoint_c":-3.7,"dewpoint_f":25.3,"will_it_rain":0,"chance_of_rain":0,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":4.9,"gust_kph":7.8,"uv":1.0},{"time_epoch":1695632400,"time":"2023-09-25
+        03:00","temp_c":11.9,"temp_f":53.4,"is_day":0,"condition":{"text":"Clear","icon":"//cdn.weatherapi.com/weather/64x64/night/113.png","code":1000},"wind_mph":3.8,"wind_kph":6.1,"wind_degree":209,"wind_dir":"SSW","pressure_mb":1020.0,"pressure_in":30.13,"precip_mm":0.0,"precip_in":0.0,"humidity":50,"cloud":0,"feelslike_c":11.3,"feelslike_f":52.4,"windchill_c":11.3,"windchill_f":52.4,"heatindex_c":11.9,"heatindex_f":53.4,"dewpoint_c":1.9,"dewpoint_f":35.4,"will_it_rain":0,"chance_of_rain":0,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":7.0,"gust_kph":11.2,"uv":1.0},{"time_epoch":1695636000,"time":"2023-09-25
+        04:00","temp_c":15.5,"temp_f":59.9,"is_day":0,"condition":{"text":"Clear","icon":"//cdn.weatherapi.com/weather/64x64/night/113.png","code":1000},"wind_mph":3.6,"wind_kph":5.8,"wind_degree":203,"wind_dir":"SSW","pressure_mb":1018.0,"pressure_in":30.06,"precip_mm":0.0,"precip_in":0.0,"humidity":27,"cloud":0,"feelslike_c":15.5,"feelslike_f":59.9,"windchill_c":15.5,"windchill_f":59.9,"heatindex_c":15.5,"heatindex_f":59.9,"dewpoint_c":-3.4,"dewpoint_f":25.8,"will_it_rain":0,"chance_of_rain":0,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":6.6,"gust_kph":10.6,"uv":1.0},{"time_epoch":1695639600,"time":"2023-09-25
+        05:00","temp_c":15.2,"temp_f":59.3,"is_day":0,"condition":{"text":"Clear","icon":"//cdn.weatherapi.com/weather/64x64/night/113.png","code":1000},"wind_mph":3.8,"wind_kph":6.1,"wind_degree":215,"wind_dir":"SW","pressure_mb":1018.0,"pressure_in":30.07,"precip_mm":0.0,"precip_in":0.0,"humidity":27,"cloud":0,"feelslike_c":15.2,"feelslike_f":59.3,"windchill_c":15.2,"windchill_f":59.3,"heatindex_c":15.2,"heatindex_f":59.3,"dewpoint_c":-3.8,"dewpoint_f":25.1,"will_it_rain":0,"chance_of_rain":0,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":7.1,"gust_kph":11.4,"uv":1.0},{"time_epoch":1695643200,"time":"2023-09-25
+        06:00","temp_c":9.9,"temp_f":49.8,"is_day":0,"condition":{"text":"Clear","icon":"//cdn.weatherapi.com/weather/64x64/night/113.png","code":1000},"wind_mph":4.3,"wind_kph":6.8,"wind_degree":220,"wind_dir":"SW","pressure_mb":1022.0,"pressure_in":30.17,"precip_mm":0.0,"precip_in":0.0,"humidity":53,"cloud":0,"feelslike_c":8.9,"feelslike_f":48.0,"windchill_c":8.9,"windchill_f":48.0,"heatindex_c":9.9,"heatindex_f":49.8,"dewpoint_c":0.9,"dewpoint_f":33.6,"will_it_rain":0,"chance_of_rain":0,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":8.2,"gust_kph":13.2,"uv":1.0},{"time_epoch":1695646800,"time":"2023-09-25
+        07:00","temp_c":14.5,"temp_f":58.2,"is_day":1,"condition":{"text":"Sunny","icon":"//cdn.weatherapi.com/weather/64x64/day/113.png","code":1000},"wind_mph":4.0,"wind_kph":6.5,"wind_degree":219,"wind_dir":"SW","pressure_mb":1019.0,"pressure_in":30.1,"precip_mm":0.0,"precip_in":0.0,"humidity":25,"cloud":1,"feelslike_c":14.6,"feelslike_f":58.3,"windchill_c":14.6,"windchill_f":58.3,"heatindex_c":14.6,"heatindex_f":58.2,"dewpoint_c":-5.2,"dewpoint_f":22.6,"will_it_rain":0,"chance_of_rain":0,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":7.9,"gust_kph":12.8,"uv":4.0},{"time_epoch":1695650400,"time":"2023-09-25
+        08:00","temp_c":15.7,"temp_f":60.3,"is_day":1,"condition":{"text":"Sunny","icon":"//cdn.weatherapi.com/weather/64x64/day/113.png","code":1000},"wind_mph":3.6,"wind_kph":5.8,"wind_degree":222,"wind_dir":"SW","pressure_mb":1020.0,"pressure_in":30.11,"precip_mm":0.0,"precip_in":0.0,"humidity":23,"cloud":1,"feelslike_c":15.7,"feelslike_f":60.3,"windchill_c":15.7,"windchill_f":60.3,"heatindex_c":15.7,"heatindex_f":60.3,"dewpoint_c":-5.1,"dewpoint_f":22.8,"will_it_rain":0,"chance_of_rain":0,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":5.9,"gust_kph":9.5,"uv":5.0},{"time_epoch":1695654000,"time":"2023-09-25
+        09:00","temp_c":16.0,"temp_f":60.8,"is_day":1,"condition":{"text":"Sunny","icon":"//cdn.weatherapi.com/weather/64x64/day/113.png","code":1000},"wind_mph":5.6,"wind_kph":9.0,"wind_degree":200,"wind_dir":"SSW","pressure_mb":1026.0,"pressure_in":30.3,"precip_mm":0.0,"precip_in":0.0,"humidity":33,"cloud":0,"feelslike_c":16.2,"feelslike_f":61.2,"windchill_c":16.2,"windchill_f":61.2,"heatindex_c":16.2,"heatindex_f":61.2,"dewpoint_c":-0.8,"dewpoint_f":30.5,"will_it_rain":0,"chance_of_rain":0,"will_it_snow":0,"chance_of_snow":0,"vis_km":16.0,"vis_miles":9.0,"gust_mph":2.6,"gust_kph":4.1,"uv":5.0},{"time_epoch":1695657600,"time":"2023-09-25
+        10:00","temp_c":20.4,"temp_f":68.8,"is_day":1,"condition":{"text":"Sunny","icon":"//cdn.weatherapi.com/weather/64x64/day/113.png","code":1000},"wind_mph":0.2,"wind_kph":0.4,"wind_degree":253,"wind_dir":"WSW","pressure_mb":1019.0,"pressure_in":30.08,"precip_mm":0.0,"precip_in":0.0,"humidity":16,"cloud":3,"feelslike_c":20.4,"feelslike_f":68.8,"windchill_c":20.4,"windchill_f":68.8,"heatindex_c":20.4,"heatindex_f":68.8,"dewpoint_c":-6.2,"dewpoint_f":20.9,"will_it_rain":0,"chance_of_rain":0,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":0.3,"gust_kph":0.4,"uv":6.0},{"time_epoch":1695661200,"time":"2023-09-25
+        11:00","temp_c":22.4,"temp_f":72.3,"is_day":1,"condition":{"text":"Sunny","icon":"//cdn.weatherapi.com/weather/64x64/day/113.png","code":1000},"wind_mph":0.9,"wind_kph":1.4,"wind_degree":106,"wind_dir":"ESE","pressure_mb":1018.0,"pressure_in":30.07,"precip_mm":0.0,"precip_in":0.0,"humidity":14,"cloud":1,"feelslike_c":22.3,"feelslike_f":72.1,"windchill_c":22.4,"windchill_f":72.3,"heatindex_c":22.3,"heatindex_f":72.1,"dewpoint_c":-6.7,"dewpoint_f":19.9,"will_it_rain":0,"chance_of_rain":0,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":1.0,"gust_kph":1.7,"uv":6.0},{"time_epoch":1695664800,"time":"2023-09-25
+        12:00","temp_c":26.0,"temp_f":78.8,"is_day":1,"condition":{"text":"Sunny","icon":"//cdn.weatherapi.com/weather/64x64/day/113.png","code":1000},"wind_mph":2.0,"wind_kph":3.2,"wind_degree":92,"wind_dir":"E","pressure_mb":1019.0,"pressure_in":30.08,"precip_mm":0.0,"precip_in":0.0,"humidity":20,"cloud":0,"feelslike_c":24.5,"feelslike_f":76.1,"windchill_c":26.0,"windchill_f":78.8,"heatindex_c":24.5,"heatindex_f":76.1,"dewpoint_c":1.5,"dewpoint_f":34.6,"will_it_rain":0,"chance_of_rain":0,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":2.3,"gust_kph":3.7,"uv":7.0},{"time_epoch":1695668400,"time":"2023-09-25
+        13:00","temp_c":25.5,"temp_f":77.9,"is_day":1,"condition":{"text":"Sunny","icon":"//cdn.weatherapi.com/weather/64x64/day/113.png","code":1000},"wind_mph":3.1,"wind_kph":5.0,"wind_degree":90,"wind_dir":"E","pressure_mb":1016.0,"pressure_in":30.02,"precip_mm":0.0,"precip_in":0.0,"humidity":13,"cloud":0,"feelslike_c":24.1,"feelslike_f":75.4,"windchill_c":25.5,"windchill_f":77.9,"heatindex_c":24.1,"heatindex_f":75.4,"dewpoint_c":-4.8,"dewpoint_f":23.3,"will_it_rain":0,"chance_of_rain":0,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":3.6,"gust_kph":5.8,"uv":7.0},{"time_epoch":1695672000,"time":"2023-09-25
+        14:00","temp_c":26.2,"temp_f":79.2,"is_day":1,"condition":{"text":"Sunny","icon":"//cdn.weatherapi.com/weather/64x64/day/113.png","code":1000},"wind_mph":5.1,"wind_kph":8.3,"wind_degree":90,"wind_dir":"E","pressure_mb":1015.0,"pressure_in":29.98,"precip_mm":0.0,"precip_in":0.0,"humidity":14,"cloud":0,"feelslike_c":24.6,"feelslike_f":76.4,"windchill_c":26.2,"windchill_f":79.2,"heatindex_c":24.6,"heatindex_f":76.4,"dewpoint_c":-3.5,"dewpoint_f":25.8,"will_it_rain":0,"chance_of_rain":0,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":5.9,"gust_kph":9.5,"uv":7.0},{"time_epoch":1695675600,"time":"2023-09-25
+        15:00","temp_c":28.1,"temp_f":82.6,"is_day":1,"condition":{"text":"Sunny","icon":"//cdn.weatherapi.com/weather/64x64/day/113.png","code":1000},"wind_mph":5.8,"wind_kph":9.4,"wind_degree":81,"wind_dir":"E","pressure_mb":1017.0,"pressure_in":30.02,"precip_mm":0.0,"precip_in":0.0,"humidity":17,"cloud":0,"feelslike_c":26.1,"feelslike_f":79.0,"windchill_c":28.1,"windchill_f":82.6,"heatindex_c":26.1,"heatindex_f":79.0,"dewpoint_c":0.5,"dewpoint_f":32.9,"will_it_rain":0,"chance_of_rain":0,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":6.7,"gust_kph":10.8,"uv":7.0},{"time_epoch":1695679200,"time":"2023-09-25
+        16:00","temp_c":27.3,"temp_f":81.1,"is_day":1,"condition":{"text":"Sunny","icon":"//cdn.weatherapi.com/weather/64x64/day/113.png","code":1000},"wind_mph":5.8,"wind_kph":9.4,"wind_degree":68,"wind_dir":"ENE","pressure_mb":1014.0,"pressure_in":29.93,"precip_mm":0.0,"precip_in":0.0,"humidity":12,"cloud":0,"feelslike_c":25.4,"feelslike_f":77.8,"windchill_c":27.3,"windchill_f":81.1,"heatindex_c":25.4,"heatindex_f":77.8,"dewpoint_c":-4.2,"dewpoint_f":24.5,"will_it_rain":0,"chance_of_rain":0,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":6.7,"gust_kph":10.8,"uv":7.0},{"time_epoch":1695682800,"time":"2023-09-25
+        17:00","temp_c":27.0,"temp_f":80.5,"is_day":1,"condition":{"text":"Sunny","icon":"//cdn.weatherapi.com/weather/64x64/day/113.png","code":1000},"wind_mph":6.0,"wind_kph":9.7,"wind_degree":66,"wind_dir":"ENE","pressure_mb":1014.0,"pressure_in":29.93,"precip_mm":0.0,"precip_in":0.0,"humidity":13,"cloud":0,"feelslike_c":25.2,"feelslike_f":77.3,"windchill_c":27.0,"windchill_f":80.5,"heatindex_c":25.2,"heatindex_f":77.3,"dewpoint_c":-3.5,"dewpoint_f":25.7,"will_it_rain":0,"chance_of_rain":0,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":7.0,"gust_kph":11.2,"uv":7.0},{"time_epoch":1695686400,"time":"2023-09-25
+        18:00","temp_c":27.0,"temp_f":80.6,"is_day":1,"condition":{"text":"Sunny","icon":"//cdn.weatherapi.com/weather/64x64/day/113.png","code":1000},"wind_mph":6.9,"wind_kph":11.2,"wind_degree":64,"wind_dir":"ENE","pressure_mb":1016.0,"pressure_in":30.01,"precip_mm":0.0,"precip_in":0.0,"humidity":17,"cloud":0,"feelslike_c":25.2,"feelslike_f":77.4,"windchill_c":27.0,"windchill_f":80.6,"heatindex_c":25.2,"heatindex_f":77.4,"dewpoint_c":-0.1,"dewpoint_f":31.8,"will_it_rain":0,"chance_of_rain":0,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":8.4,"gust_kph":13.5,"uv":7.0},{"time_epoch":1695690000,"time":"2023-09-25
+        19:00","temp_c":23.6,"temp_f":74.5,"is_day":0,"condition":{"text":"Clear","icon":"//cdn.weatherapi.com/weather/64x64/night/113.png","code":1000},"wind_mph":6.5,"wind_kph":10.4,"wind_degree":61,"wind_dir":"ENE","pressure_mb":1015.0,"pressure_in":29.97,"precip_mm":0.0,"precip_in":0.0,"humidity":19,"cloud":0,"feelslike_c":22.9,"feelslike_f":73.3,"windchill_c":23.6,"windchill_f":74.5,"heatindex_c":22.9,"heatindex_f":73.3,"dewpoint_c":-1.3,"dewpoint_f":29.7,"will_it_rain":0,"chance_of_rain":0,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":10.8,"gust_kph":17.3,"uv":1.0},{"time_epoch":1695693600,"time":"2023-09-25
+        20:00","temp_c":22.5,"temp_f":72.4,"is_day":0,"condition":{"text":"Clear","icon":"//cdn.weatherapi.com/weather/64x64/night/113.png","code":1000},"wind_mph":4.0,"wind_kph":6.5,"wind_degree":85,"wind_dir":"E","pressure_mb":1016.0,"pressure_in":29.99,"precip_mm":0.0,"precip_in":0.0,"humidity":21,"cloud":0,"feelslike_c":22.5,"feelslike_f":72.5,"windchill_c":22.5,"windchill_f":72.4,"heatindex_c":22.5,"heatindex_f":72.5,"dewpoint_c":-0.6,"dewpoint_f":30.9,"will_it_rain":0,"chance_of_rain":0,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":7.2,"gust_kph":11.6,"uv":1.0},{"time_epoch":1695697200,"time":"2023-09-25
+        21:00","temp_c":20.9,"temp_f":69.6,"is_day":0,"condition":{"text":"Clear","icon":"//cdn.weatherapi.com/weather/64x64/night/113.png","code":1000},"wind_mph":2.2,"wind_kph":3.6,"wind_degree":141,"wind_dir":"SE","pressure_mb":1018.0,"pressure_in":30.05,"precip_mm":0.0,"precip_in":0.0,"humidity":25,"cloud":0,"feelslike_c":20.9,"feelslike_f":69.6,"windchill_c":20.9,"windchill_f":69.6,"heatindex_c":20.9,"heatindex_f":69.6,"dewpoint_c":0.1,"dewpoint_f":32.1,"will_it_rain":0,"chance_of_rain":0,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":3.9,"gust_kph":6.3,"uv":1.0},{"time_epoch":1695700800,"time":"2023-09-25
+        22:00","temp_c":21.0,"temp_f":69.8,"is_day":0,"condition":{"text":"Clear","icon":"//cdn.weatherapi.com/weather/64x64/night/113.png","code":1000},"wind_mph":2.2,"wind_kph":3.6,"wind_degree":204,"wind_dir":"SSW","pressure_mb":1016.0,"pressure_in":30.01,"precip_mm":0.0,"precip_in":0.0,"humidity":26,"cloud":0,"feelslike_c":21.0,"feelslike_f":69.8,"windchill_c":21.0,"windchill_f":69.8,"heatindex_c":22.5,"heatindex_f":72.6,"dewpoint_c":1.0,"dewpoint_f":33.8,"will_it_rain":0,"chance_of_rain":0,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":4.0,"gust_kph":6.4,"uv":1.0},{"time_epoch":1695704400,"time":"2023-09-25
+        23:00","temp_c":20.3,"temp_f":68.5,"is_day":0,"condition":{"text":"Clear","icon":"//cdn.weatherapi.com/weather/64x64/night/113.png","code":1000},"wind_mph":2.7,"wind_kph":4.3,"wind_degree":229,"wind_dir":"SW","pressure_mb":1016.0,"pressure_in":30.01,"precip_mm":0.0,"precip_in":0.0,"humidity":27,"cloud":0,"feelslike_c":20.3,"feelslike_f":68.5,"windchill_c":20.3,"windchill_f":68.5,"heatindex_c":20.3,"heatindex_f":68.5,"dewpoint_c":0.5,"dewpoint_f":32.9,"will_it_rain":0,"chance_of_rain":0,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":4.9,"gust_kph":7.8,"uv":1.0}]}]}}'
+  recorded_at: Mon, 25 Sep 2023 15:54:08 GMT
+recorded_with: VCR 6.2.0
