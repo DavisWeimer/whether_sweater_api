@@ -5,7 +5,7 @@ class PhotoService
     end
   end
 
-  def self.find_books_by_location_title(location)
+  def self.find_photos_by_location_title(location)
     Rails.cache.fetch("backgrounds:#{location}", expires_in: 12.hours) do
       response = conn.get do |req|
         req.url('search/photos', query: "daytime,cityscape,#{location}", orientation: "landscape")
