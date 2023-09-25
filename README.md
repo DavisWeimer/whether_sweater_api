@@ -1,6 +1,7 @@
 # Whether, Sweater? API
 ![Tests](https://badgen.net/badge/tests/passing/green?icon=github)
 ![Commits](https://badgen.net/github/last-commit/DavisWeimer/whether_sweater_api?icon=github)
+[![Ruby Style Guide](https://img.shields.io/badge/code_style-rubocop-brightgreen.svg)](https://github.com/rubocop/rubocop)
 
 Whether, Sweater? API is built to expose endpoints for a Frontend app looking to:
 - Get data about weather in a requested City
