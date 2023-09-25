@@ -51,5 +51,19 @@ RSpec.describe "BookSearches", type: :request do
         expect(book[:title]).to be_a(String)
       end
     end
+
+    it "can't get no dang books without parameters!", :vcr do
+      missing_params = {
+        location: nil,
+        quantity: nil
+      }
+      get api_v0_book_search_path, params: missing_params , headers: { 'Content-Type' => 'application/json', 'Accept' => 'application/json' }
+
+      expect(response).to have_http_status(:unprocessable_entity)
+      
+      error = JSON.parse(response.body, symbolize_names: true)
+      expect(error).to have_key(:error)
+      expect(error[:error]).to eq("Missing parameters")
+    end
   end
 end
