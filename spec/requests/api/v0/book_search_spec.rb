@@ -1,20 +1,22 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
-RSpec.describe "BookSearches", type: :request do
+RSpec.describe 'BookSearches', type: :request do
   before do
-    @user = User.create(email: "book_fiend_123@example.com",
-      password: "b00k5#r#c00l", 
-      password_confirmation: "b00k5#r#c00l", 
-      )
-    
+    @user = User.create(email: 'book_fiend_123@example.com',
+                        password: 'b00k5#r#c00l',
+                        password_confirmation: 'b00k5#r#c00l')
+
     @book_query = {
-      location: "denver,co",
+      location: 'denver,co',
       quantity: 5
     }
   end
-  describe "GET /show" do
-    it "can search books based on a location name!", :vcr do
-      get api_v0_book_search_path, params: @book_query, headers: { 'Content-Type' => 'application/json', 'Accept' => 'application/json' }
+  describe 'GET /show' do
+    it 'can search books based on a location name!', :vcr do
+      get api_v0_book_search_path, params: @book_query,
+                                   headers: { 'Content-Type' => 'application/json', 'Accept' => 'application/json' }
 
       book_trip = JSON.parse(response.body, symbolize_names: true)
       expect(book_trip).to have_key(:data)
@@ -22,7 +24,7 @@ RSpec.describe "BookSearches", type: :request do
       expect(book_trip[:data]).to have_key(:id)
       expect(book_trip[:data][:id]).to eq(nil)
       expect(book_trip[:data]).to have_key(:attributes)
-      expect(book_trip[:data][:type]).to eq("books")
+      expect(book_trip[:data][:type]).to eq('books')
       expect(book_trip[:data][:attributes]).to have_key(:destination)
       expect(book_trip[:data][:attributes][:destination]).to be_a(String)
 
@@ -37,7 +39,7 @@ RSpec.describe "BookSearches", type: :request do
       # total_books_found
       expect(book_trip[:data][:attributes]).to have_key(:total_books_found)
       expect(book_trip[:data][:attributes][:total_books_found]).to be_a(Integer)
-      
+
       # books
       expect(book_trip[:data][:attributes]).to have_key(:books)
       expect(book_trip[:data][:attributes][:books]).to be_a(Array)
@@ -57,27 +59,29 @@ RSpec.describe "BookSearches", type: :request do
         location: nil,
         quantity: nil
       }
-      get api_v0_book_search_path, params: missing_params , headers: { 'Content-Type' => 'application/json', 'Accept' => 'application/json' }
+      get api_v0_book_search_path, params: missing_params,
+                                   headers: { 'Content-Type' => 'application/json', 'Accept' => 'application/json' }
 
       expect(response).to have_http_status(:unprocessable_entity)
-      
+
       error = JSON.parse(response.body, symbolize_names: true)
       expect(error).to have_key(:error)
-      expect(error[:error]).to eq("Missing parameters")
+      expect(error[:error]).to eq('Missing parameters')
     end
 
     it "can't get no dang books if the location is misspelled or non-existent!", :vcr do
       incorrect_params = {
-        location: "benver,c1",
+        location: 'benver,c1',
         quantity: 5
       }
-      get api_v0_book_search_path, params: incorrect_params , headers: { 'Content-Type' => 'application/json', 'Accept' => 'application/json' }
+      get api_v0_book_search_path, params: incorrect_params,
+                                   headers: { 'Content-Type' => 'application/json', 'Accept' => 'application/json' }
 
       expect(response).to have_http_status(:unprocessable_entity)
-      
+
       error = JSON.parse(response.body, symbolize_names: true)
       expect(error).to have_key(:error)
-      expect(error[:error]).to eq("Incorrect/Non-Existent city info")
+      expect(error[:error]).to eq('Incorrect/Non-Existent city info')
     end
   end
 end

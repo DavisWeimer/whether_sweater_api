@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class LocationFacade
   def self.location_coordinates(location)
     LocationService.find_location_coordinates(location)[:results].map do |location_data|
@@ -13,7 +15,7 @@ class LocationFacade
     if time[:route].key?(:sessionId)
       time[:route][:formattedTime]
     else
-      "Impossible"
+      'Impossible'
     end
   end
 end

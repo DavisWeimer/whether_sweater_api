@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 class BookSerializer
   def self.format_books(location, books, forecast)
     {
       data: {
         id: nil,
-        type: "books",
+        type: 'books',
         attributes: {
           destination: location,
           forecast: {
