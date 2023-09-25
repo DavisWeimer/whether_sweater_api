@@ -1,20 +1,20 @@
 class BookSerializer
-  def self.format_books(books)
+  def self.format_books(location, books, forecast)
     {
       data: {
         id: nil,
         type: "books",
         attributes: {
-          destination: "denver,co",
+          destination: location,
           forecast: {
-            summary: "Cloudy with a chance of meatballs",
-            temperature: "83 F"
+            summary: forecast[:condition],
+            temperature: "#{forecast[:temperature]} F"
           },
-          total_books_found: 172,
-          books: books.map do |book|
+          total_books_found: books[:numFound],
+          books: books[:docs].map do |book|
             {
-              isbn: "isbn",
-              title: "title"
+              isbn: book[:isbn],
+              title: book[:title]
             }
           end
         }
