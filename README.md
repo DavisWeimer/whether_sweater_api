@@ -7,7 +7,7 @@ Whether, Sweater? API is built to expose endpoints for a Frontend app looking to
 - Get data about weather in a requested City
 - Create, Authenticate, and Generate unique API Keys for it's Users
 - Create Road Trips for it's Users
-#### *Note*: API keys are returned upon a successful User Registration (See [User Registration](#2-user-registration))
+#### *Note*: A API key is returned upon a successful User Registration (See [User Registration](#2-user-registration))
 ## Ruby/Rails version<br>
 `Ruby 3.2.2`<br>
 `Rails 7.0.7.2`
