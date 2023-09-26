@@ -22,7 +22,7 @@ RSpec.describe 'Users', type: :request do
       expect(session[:data]).to have_key(:type)
       expect(session[:data]).to have_key(:id)
       expect(session[:data]).to have_key(:attributes)
-      expect(session[:data][:type]).to eq('users')
+      expect(session[:data][:type]).to eq('user')
       expect(session[:data][:attributes]).to have_key(:email)
       expect(session[:data][:attributes][:email]).to be_a(String)
       expect(session[:data][:attributes]).to have_key(:api_key)
