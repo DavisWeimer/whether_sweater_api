@@ -7,6 +7,8 @@ RSpec.describe ForecastSerializer, type: :serializer do
     before do
       @location_coords = LocationFacade.location_coordinates('denver,co')
       @forecast = WeatherFacade.get_weather_5_days(@location_coords)
+      @forecast = JSON.parse(@forecast, symbolize_names: true)
+      
       @forecast[:current][:temp_c] = 25.0
       @forecast[:current][:temp_f] = 77.0
       @forecast[:current][:feelslike_c] = 23.0
