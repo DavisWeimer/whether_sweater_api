@@ -24,9 +24,9 @@ module Api
           destination_coords = LocationFacade.location_coordinates(road_trip_params[:destination])
           forecast = WeatherFacade.get_destination_weather(destination_coords, arrival_hour, params[:units])
         end
-        
+
         road_trip = RoadTrip.new(road_trip_params[:origin], road_trip_params[:destination], road_trip_time, forecast)
-        render json: RoadTripSerializer.new(road_trip), status: :ok,
+        render json: RoadTripSerializer.new(road_trip),
                status: :ok
       end
 
