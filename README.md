@@ -38,14 +38,43 @@ bundle install
 ```ruby
 rails db:{drop,create,migrate,seed}
 ```
-5. Run the server
+
+## <b>Configuration</b>
+
+You will need to register and or obtain API keys from:
+- The Weather API — https://www.weatherapi.com/
+- The MapQuest API — https://developer.mapquest.com/documentation/
+- The Unsplash API — https://unsplash.com/oauth/applications
+##### *Note*: For the Unsplash API, you must register the app to acquire an `access key`.
+
+Once you have acquired keys for all three API's, you are ready to encrypt them within the app
+1. Run this command to create your `master.key` & open the Rails Credentials file
+```bash
+EDITOR="code --wait" rails credentials:edit
+```
+2. Copy this block in and fill in the corresponding fields with your keys (More info on Rails Credentials [here](https://web-crunch.com/posts/the-complete-guide-to-ruby-on-rails-encrypted-credentials))
+```ruby
+weather:
+  key: < your Weather API key >
+
+map_quest:
+  key: < your MapQuest key >
+
+unsplash:
+  access_key: < your Unsplash Access key >
+  secret_key: < your Unsplash Secret key >
+
+```
+3. Close the Rails Credentials file to encrypt and save them, now you should be ready to test some endpoints!
+4. Run the server
 ```ruby
 rails s
 ```
-6. Test the endpoints at this local URL:
+5. Test the endpoints at this local URL and any of the endpoint URI's listed below:
 ```bash
 http://localhost:3000/
 ```
+
 ## <b>Endpoints Available</b>
 ### 1. Get weather for a city
 Request:
