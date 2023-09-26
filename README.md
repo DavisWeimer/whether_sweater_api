@@ -65,8 +65,11 @@ unsplash:
   secret_key: < your Unsplash Secret key >
 
 ```
-3. Close the Rails Credentials file to encrypt and save them, now you should be ready to test some endpoints!
-4. Run the server
+3. Close the Rails Credentials file to encrypt and save them, you should see this output in your terminal:
+```bash
+File encrypted and saved.
+```
+5. Run the server
 ```ruby
 rails s
 ```
