@@ -1,8 +1,9 @@
 # frozen_string_literal: true
 
 class WeatherFacade
-  def self.get_weather_5_days(location_coords)
-    WeatherService.five_days_weather(location_coords)
+  def self.get_weather_5_days(location_coords, units = '')
+    forecast_data = WeatherService.five_days_weather(location_coords)
+    Forecast.new(forecast_data, units)
   end
 
   def self.get_destination_weather(destination, time, units = 'imperial')
@@ -15,8 +16,8 @@ class WeatherFacade
 
     {
       datetime: weather[:location][:localtime],
-      temperature: weather[:current][temperature_key],
-      condition: weather[:current][:condition][:text]
+      condition: weather[:current][:condition][:text],
+      temperature: weather[:current][temperature_key]
     }
   end
 end

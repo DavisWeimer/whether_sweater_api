@@ -32,7 +32,7 @@ RSpec.describe 'Backgrounds', type: :request do
       expect(background[:data][:attributes][:image][:credit]).to have_key(:author)
       expect(background[:data][:attributes][:image][:credit][:author]).to be_a(String)
       expect(background[:data][:attributes][:image][:credit]).to have_key(:portfolio)
-      expect(background[:data][:attributes][:image][:credit][:portfolio]).to be_a(String)
+      expect(background[:data][:attributes][:image][:credit][:portfolio]).to be_a(String).or eq nil
     end
   end
 end

@@ -6,9 +6,9 @@ module Api
       def show
         location_coords = LocationFacade.location_coordinates(params[:location])
 
-        forecast = WeatherFacade.get_weather_5_days(location_coords)
+        forecast = WeatherFacade.get_weather_5_days(location_coords, params[:units])
 
-        render json: ForecastSerializer.weather_information(forecast, params[:units])
+        render json: ForecastSerializer.new(forecast)
       end
     end
   end

@@ -4,21 +4,19 @@ module Api
   module V0
     class BookSearchController < ApplicationController
       def show
+        book_params = { location: params[:location], quantity: params[:quantity] }
         unless params[:location].present? && params[:quantity].present?
           render json: { error: 'Missing parameters' }, status: :unprocessable_entity
           return
         end
 
-        books = BookFacade.books_by_location_title(params[:location], params[:quantity])
-        unless (books[:numFound]).positive?
+        books = BookFacade.books_by_location_title(book_params)
+        unless books.total_books_found.positive?
           render json: { error: 'Incorrect/Non-Existent city info' }, status: :unprocessable_entity
           return
         end
 
-        location_coords = LocationFacade.location_coordinates(params[:location])
-        forecast = WeatherFacade.get_destination_weather(location_coords, "don't worry about it..")
-
-        render json: BookSerializer.format_books(params[:location], books, forecast), status: :created
+        render json: BookSerializer.new(books), status: :created
       end
     end
   end
