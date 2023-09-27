@@ -16,8 +16,8 @@ class WeatherFacade
 
     {
       datetime: weather[:location][:localtime],
-      temperature: weather[:current][temperature_key],
-      condition: weather[:current][:condition][:text]
+      condition: weather[:current][:condition][:text],
+      temperature: weather[:current][temperature_key]
     }
   end
 end

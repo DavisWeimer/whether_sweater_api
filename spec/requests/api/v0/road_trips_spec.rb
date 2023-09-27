@@ -23,7 +23,6 @@ RSpec.describe 'Api::V0::RoadTrips', type: :request do
       expect(response).to have_http_status(:ok)
 
       road_trip = JSON.parse(response.body, symbolize_names: true)
-
       expect(road_trip).to have_key(:data)
       expect(road_trip[:data]).to have_key(:type)
       expect(road_trip[:data]).to have_key(:id)

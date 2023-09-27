@@ -19,6 +19,7 @@ RSpec.describe 'BookSearches', type: :request do
                                    headers: { 'Content-Type' => 'application/json', 'Accept' => 'application/json' }
 
       book_trip = JSON.parse(response.body, symbolize_names: true)
+      # require 'pry'; binding.pry
       expect(book_trip).to have_key(:data)
       expect(book_trip[:data]).to have_key(:type)
       expect(book_trip[:data]).to have_key(:id)
@@ -31,10 +32,12 @@ RSpec.describe 'BookSearches', type: :request do
       # forecast
       expect(book_trip[:data][:attributes]).to have_key(:forecast)
       expect(book_trip[:data][:attributes][:forecast]).to be_a(Hash)
-      expect(book_trip[:data][:attributes][:forecast]).to have_key(:summary)
-      expect(book_trip[:data][:attributes][:forecast][:summary]).to be_a(String)
+      expect(book_trip[:data][:attributes][:forecast]).to have_key(:condition)
+      expect(book_trip[:data][:attributes][:forecast][:condition]).to be_a(String)
+      expect(book_trip[:data][:attributes][:forecast]).to have_key(:datetime)
+      expect(book_trip[:data][:attributes][:forecast][:datetime]).to be_a(String)
       expect(book_trip[:data][:attributes][:forecast]).to have_key(:temperature)
-      expect(book_trip[:data][:attributes][:forecast][:temperature]).to be_a(String)
+      expect(book_trip[:data][:attributes][:forecast][:temperature]).to be_a(Float)
 
       # total_books_found
       expect(book_trip[:data][:attributes]).to have_key(:total_books_found)
