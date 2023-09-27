@@ -8,7 +8,7 @@ class Books
 
   def initialize(book_data, forecast, location)
     @id = nil
-    @type = "road_trip"
+    @type = "books"
     @destination = location
     @forecast = forecast
     @total_books_found = book_data[:numFound]
