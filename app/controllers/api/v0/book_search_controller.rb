@@ -11,7 +11,7 @@ module Api
         end
 
         books = BookFacade.books_by_location_title(book_params)
-        unless (books.total_books_found).positive?
+        unless books.total_books_found.positive?
           render json: { error: 'Incorrect/Non-Existent city info' }, status: :unprocessable_entity
           return
         end

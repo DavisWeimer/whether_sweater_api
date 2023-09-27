@@ -1,13 +1,15 @@
+# frozen_string_literal: true
+
 class Forecast
-  attr_reader :id, 
-              :type, 
-              :current_weather, 
-              :daily_weather, 
+  attr_reader :id,
+              :type,
+              :current_weather,
+              :daily_weather,
               :hourly_weather
 
-  def initialize(forecast_data, units = "")
+  def initialize(forecast_data, units = '')
     @id = nil
-    @type = "forecast"
+    @type = 'forecast'
     @units = units
     @forecast_data = forecast_data
     @current_weather = current_weather

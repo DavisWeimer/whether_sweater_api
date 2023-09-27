@@ -1,14 +1,16 @@
+# frozen_string_literal: true
+
 class Books
-  attr_reader :id, 
-              :type, 
-              :destination, 
-              :forecast, 
+  attr_reader :id,
+              :type,
+              :destination,
+              :forecast,
               :total_books_found,
               :books
 
   def initialize(book_data, forecast, location)
     @id = nil
-    @type = "books"
+    @type = 'books'
     @destination = location
     @forecast = forecast
     @total_books_found = book_data[:numFound]
