@@ -7,7 +7,7 @@ services:
   - type: web
     name: whether_sweater_api
     runtime: ruby
-    buildCommand: "bundle install && rails rails db:{migrate,seed}"
+    buildCommand: "bundle install && rails db:{migrate,seed}"
     startCommand: "bundle exec puma -C config/puma.rb"
     envVars:
       - key: DATABASE_URL
