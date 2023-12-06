@@ -1,0 +1,18 @@
+databases:
+  - name: whether_sweater_api_production
+    databaseName: whether_sweater_api_production
+    user: whether_sweater_api
+
+services:
+  - type: web
+    name: whether_sweater_api
+    runtime: ruby
+    buildCommand: "./bin/render-build.sh"
+    startCommand: "bundle exec puma -C config/puma.rb"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: whether_sweater_api_production
+          property: connectionString
+      - key: RAILS_MASTER_KEY
+        sync: false
