@@ -38,11 +38,12 @@ gem 'faraday'
 
 gem 'jsonapi-serializer'
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
-# gem "rack-cors"
+gem "rack-cors"
 
 # gem 'rubocop', '~> 1.56', require: false
 
-gem 'rack-cors'
+gem 'devise'
+gem 'devise-jwt'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
