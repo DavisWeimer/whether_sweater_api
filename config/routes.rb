@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v0 do
+      get '/current_user', to: 'current_user#index'
       get '/forecast', to: 'forecast#show'
       resources :users, only: [:create]
       resources :sessions, only: [:create]

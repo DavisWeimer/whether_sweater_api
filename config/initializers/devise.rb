@@ -14,7 +14,7 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = '6b9ddece61e858d8c88150b0bf235bf13b7041f943096c33927089f021b2a2e70b6e17ce1832f793fa69868ed6ffebbdd2d0873c0121580481e3be0d05824cf3'
+  # config.secret_key = 'd342814bf83b57016d7bad6a571a047c0da449770823b0e9c56d306eb9d6bcb488eff2eb3dced366776a5f015a1dc0ccd200be3b11f0198b2a3749236b8656fa'
 
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
@@ -126,7 +126,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 12
 
   # Set up a pepper to generate the hashed password.
-  # config.pepper = '57ade78e918e34e5df3acfc4f1312fb820e5d1b832512eba573425fbe2a4e27d0e2a81cc710c926ddd8d5ef3edabdbb3986237b645481c2a8d852014e5d7d3bb'
+  # config.pepper = '7c91015bf2746fe94b07cc7f2ec18a01f62ef78c26e2f343fd5409dc938ddb6016d7d7bc66805e58b95ccd7b8c7596c7419d458048279fd99037e3c1b2f8b022'
 
   # Send a notification to the original email when the user's email is changed.
   # config.send_email_changed_notification = false
@@ -263,7 +263,7 @@ Devise.setup do |config|
   # should add them to the navigational formats lists.
   #
   # The "*/*" below is required to match Internet Explorer requests.
-  # config.navigational_formats = ['*/*', :html, :turbo_stream]
+  config.navigational_formats = []
 
   # The default HTTP method used to sign out a resource. Default is :delete.
   config.sign_out_via = :delete
@@ -310,6 +310,7 @@ Devise.setup do |config|
   # When set to false, does not sign a user in automatically after their password is
   # changed. Defaults to true, so a user is signed in automatically after changing a password.
   # config.sign_in_after_change_password = true
+
   config.jwt do |jwt|
     jwt.secret = Rails.application.credentials.fetch(:secret_key_base)
     jwt.dispatch_requests = [
@@ -320,4 +321,5 @@ Devise.setup do |config|
     ]
     jwt.expiration_time = 30.minutes.to_i
   end
+
 end
