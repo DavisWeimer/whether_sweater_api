@@ -1,8 +1,19 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  devise_for :users, path: '', path_names: {
+    sign_in: 'login',
+    sign_out: 'logout',
+    registration: 'signup'
+  },
+  controllers: {
+    sessions: 'users/sessions',
+    registrations: 'users/registrations'
+  }
+
   namespace :api do
     namespace :v0 do
+      get '/current_user', to: 'current_user#index'
       get '/forecast', to: 'forecast#show'
       resources :users, only: [:create]
       resources :sessions, only: [:create]
