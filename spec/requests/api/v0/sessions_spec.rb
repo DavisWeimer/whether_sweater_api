@@ -1,48 +1,46 @@
 # frozen_string_literal: true
 
+# spec/requests/users/sessions_controller_spec.rb
+
 require 'rails_helper'
 
-RSpec.describe 'Users', type: :request do
-  describe 'POST /login' do
-    it 'returns user email/token if they exist', :vcr do
-      user = User.create(email: 'yoyoyoyoy@example.com',
-                         password: 'password',
-                         password_confirmation: 'password',
-                         api_key: '640560c67845c6d6f9bb0a3d3ff7c4805c721c6cc659aac0c35be848674e4b00')
-      user_login = {
-        "email": user.email,
-        "password": user.password
-      }
-      post api_v0_sessions_path, params: user_login.to_json,
-                                 headers: { 'Content-Type' => 'application/json', 'Accept' => 'application/json' }
-      expect(response).to have_http_status(:ok)
+RSpec.describe 'Users::SessionsController', type: :request do
+  let!(:user) { User.create(email: 'test@example.com', password: 'password123', password_confirmation: 'password123') }
 
-      session = JSON.parse(response.body, symbolize_names: true)
-      expect(session).to have_key(:data)
-      expect(session[:data]).to have_key(:type)
-      expect(session[:data]).to have_key(:id)
-      expect(session[:data]).to have_key(:attributes)
-      expect(session[:data][:type]).to eq('user')
-      expect(session[:data][:attributes]).to have_key(:email)
-      expect(session[:data][:attributes][:email]).to be_a(String)
-      expect(session[:data][:attributes]).to have_key(:api_key)
-      expect(session[:data][:attributes][:api_key]).to be_a(String)
-      expect(session[:data][:attributes]).not_to have_key(:password)
+  describe 'POST /login' do
+    context 'with valid credentials' do
+      it 'logs in the user' do
+        post '/login', params: { user: { email: 'test@example.com', password: 'password123' } }
+        expect(response).to have_http_status(:ok)
+        expect(json['status']['message']).to eq('Logged in sucessfully.')
+        expect(json['data']['email']).to eq('test@example.com')
+      end
     end
 
-    it 'returns appropriate status and error message on unsuccessful login', :vcr do
-      login_params = {
-        email: 'nonexistent@example.com',
-        password: 'password'
-      }
-
-      post api_v0_sessions_path, params: login_params.to_json,
-                                 headers: { 'Content-Type' => 'application/json', 'Accept' => 'application/json' }
-      expect(response).to have_http_status(:unauthorized)
-
-      error = JSON.parse(response.body, symbolize_names: true)
-      expect(error).to have_key(:errors)
-      expect(error[:errors]).to eq('Invalid email or password')
+    context 'with invalid credentials' do
+      it 'does not log in the user' do
+        post '/login', params: { user: { email: 'test@example.com', password: 'wrong_password' } }
+        expect(response).to have_http_status(:unauthorized)
+        expect(response.body).to eq("Invalid Email or password.")
+      end
     end
   end
+
+  describe 'DELETE /logout' do
+    it 'logs out the user' do
+      post '/login', params: { user: { email: 'test@example.com', password: 'password123' } }
+      delete '/logout', headers: { Authorization: token }
+      expect(response).to have_http_status(:ok)
+      expect(json['status']).to eq(200)
+      expect(json['message']).to eq('Logged out successfully.')
+    end
+  end
+end
+
+def json
+  JSON.parse(response.body)
+end
+
+def token
+  response.header["Authorization"]
 end
