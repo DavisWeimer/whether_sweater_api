@@ -7,9 +7,9 @@ class WeatherService
     end
   end
 
-  def self.five_days_weather(location_coords)
+  def self.three_days_weather(location_coords)
     response = conn.get do |req|
-      req.url '/v1/forecast.json', q: location_coords.values.join(', '), days: 6
+      req.url '/v1/forecast.json', q: location_coords.values.join(', '), days: 3
     end
     JSON.parse(response.body, symbolize_names: true)
   end

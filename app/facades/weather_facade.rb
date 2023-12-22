@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 class WeatherFacade
-  def self.get_weather_5_days(location_coords, units = '')
-    forecast_data = WeatherService.five_days_weather(location_coords)
+  def self.get_weather_3_days(location_coords, units = '')
+    forecast_data = WeatherService.three_days_weather(location_coords)
     Forecast.new(forecast_data, units)
   end
 
