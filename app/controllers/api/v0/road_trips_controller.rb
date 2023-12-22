@@ -18,7 +18,7 @@ module Api
       private
 
       def road_trip_params
-        params.permit(:origin, :destination, :units)
+        params.require(:road_trip).permit(:origin, :destination, :units)
       end
     end
   end
