@@ -16,6 +16,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
       render json: {
         status: { code: 200, message: "Account deleted successfully."}
       }, status: :ok
+    elsif resource.errors.full_messages.include?("Email has already been taken")
+        render json: {
+          status: { code: 409, message: "Email is taken" }
+        }, status: :conflict
     else
       render json: {
         status: {code: 422, message: "User couldn't be created successfully. #{resource.errors.full_messages.to_sentence}"}
