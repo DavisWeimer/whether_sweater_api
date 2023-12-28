@@ -63,9 +63,19 @@ class Forecast
 
   def hourly_weather
     keys = units_logic
-    @forecast_data[:forecast][:forecastday][0][:hour].map do |hourly|
+    datetime_str = @forecast_data[:current][:last_updated]
+    datetime = DateTime.parse(datetime_str)
+    updated_at_time = datetime.hour
+  
+    @forecast_data[:forecast][:forecastday][0][:hour].filter do |hourly|
+      time = DateTime.parse(hourly[:time])
+      current_time = time.hour
+      (current_time > updated_at_time) && (current_time <= updated_at_time + 4)
+    end.map do |hourly|
+      hour = DateTime.parse(hourly[:time])
+      formatted_time = hour.strftime("%I:%M %p")
       {
-        time: hourly[:time][/\d{2}:\d{2}/],
+        time: formatted_time,
         temperature: hourly[keys[:temperature_key]],
         conditions: hourly[:condition][:text],
         icon: hourly[:condition][:icon]
