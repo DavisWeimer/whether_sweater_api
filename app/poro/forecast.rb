@@ -28,8 +28,11 @@ class Forecast
 
   def current_weather
     keys = units_logic
+    datetime_str = @forecast_data[:current][:last_updated]
+    datetime = DateTime.parse(datetime_str)
+    formatted_str = datetime.strftime("%b %d %I:%M %p")
     {
-      last_updated: @forecast_data[:current][:last_updated],
+      last_updated: formatted_str,
       temperature: @forecast_data[:current][keys[:temperature_key]],
       feels_like: @forecast_data[:current][keys[:feels_like_key]],
       humidity: @forecast_data[:current][:humidity],
@@ -43,8 +46,11 @@ class Forecast
   def daily_weather
     keys = units_logic
     @forecast_data[:forecast][:forecastday].map do |daily|
+      date_str = daily[:date]
+      date = Date.parse(date_str)
+      formatted_str = date.strftime("%a")
       {
-        date: daily[:date],
+        date: formatted_str,
         sunrise: daily[:astro][:sunrise],
         sunset: daily[:astro][:sunset],
         max_temp: daily[:day][keys[:max_temp_key]],
