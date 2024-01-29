@@ -173,4 +173,76 @@ http_interactions:
         Quarter","moon_illumination":41,"is_moon_up":1,"is_sun_up":0},"hour":[{"time_epoch":1703005200,"time":"2023-12-19
         11:00","temp_c":13.7,"temp_f":56.7,"is_day":1,"condition":{"text":"Sunny","icon":"//cdn.weatherapi.com/weather/64x64/day/113.png","code":1000},"wind_mph":9.8,"wind_kph":15.8,"wind_degree":102,"wind_dir":"ESE","pressure_mb":1027.0,"pressure_in":30.32,"precip_mm":0.0,"precip_in":0.0,"humidity":46,"cloud":4,"feelslike_c":12.5,"feelslike_f":54.6,"windchill_c":12.5,"windchill_f":54.6,"heatindex_c":13.7,"heatindex_f":56.7,"dewpoint_c":2.0,"dewpoint_f":35.5,"will_it_rain":0,"chance_of_rain":0,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":11.5,"gust_kph":18.4,"uv":4.0}]}]}}'
   recorded_at: Wed, 20 Dec 2023 04:49:48 GMT
+- request:
+    method: get
+    uri: http://api.weatherapi.com/v1/forecast.json?hour=4&key=<WEATHER KEY>&q=29.76078,%20-95.36952
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.11
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 29 Jan 2024 21:03:19 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      Server:
+      - BunnyCDN-IL1-894
+      Cdn-Pullzone:
+      - '93447'
+      Cdn-Uid:
+      - 8fa3a04a-75d9-4707-8056-b7b33c8ac7fe
+      Cdn-Requestcountrycode:
+      - US
+      Age:
+      - '0'
+      Cache-Control:
+      - public, max-age=180
+      Via:
+      - 1.1 varnish (Varnish/6.0)
+      X-Weatherapi-Qpm-Left:
+      - '999971'
+      X-Varnish:
+      - '78381730'
+      Cdn-Proxyver:
+      - '1.04'
+      Cdn-Requestpullsuccess:
+      - 'True'
+      Cdn-Requestpullcode:
+      - '200'
+      Cdn-Cachedat:
+      - 01/29/2024 21:03:19
+      Cdn-Edgestorageid:
+      - '1070'
+      Cdn-Status:
+      - '200'
+      Cdn-Requestid:
+      - 29cba54fbceba714663c720b1da7409d
+      Cdn-Cache:
+      - MISS
+    body:
+      encoding: ASCII-8BIT
+      string: '{"location":{"name":"Houston","region":"Texas","country":"United States
+        of America","lat":29.76,"lon":-95.37,"tz_id":"America/Chicago","localtime_epoch":1706562149,"localtime":"2024-01-29
+        15:02"},"current":{"last_updated_epoch":1706562000,"last_updated":"2024-01-29
+        15:00","temp_c":19.0,"temp_f":66.2,"is_day":1,"condition":{"text":"Sunny","icon":"//cdn.weatherapi.com/weather/64x64/day/113.png","code":1000},"wind_mph":2.2,"wind_kph":3.6,"wind_degree":242,"wind_dir":"WSW","pressure_mb":1025.0,"pressure_in":30.26,"precip_mm":0.0,"precip_in":0.0,"humidity":30,"cloud":0,"feelslike_c":19.0,"feelslike_f":66.2,"vis_km":16.0,"vis_miles":9.0,"uv":5.0,"gust_mph":4.4,"gust_kph":7.1},"forecast":{"forecastday":[{"date":"2024-01-29","date_epoch":1706486400,"day":{"maxtemp_c":19.3,"maxtemp_f":66.7,"mintemp_c":10.2,"mintemp_f":50.3,"avgtemp_c":14.2,"avgtemp_f":57.5,"maxwind_mph":5.4,"maxwind_kph":8.6,"totalprecip_mm":0.0,"totalprecip_in":0.0,"totalsnow_cm":0.0,"avgvis_km":10.0,"avgvis_miles":6.0,"avghumidity":48,"daily_will_it_rain":0,"daily_chance_of_rain":0,"daily_will_it_snow":0,"daily_chance_of_snow":0,"condition":{"text":"Sunny","icon":"//cdn.weatherapi.com/weather/64x64/day/113.png","code":1000},"uv":5.0},"astro":{"sunrise":"07:13
+        AM","sunset":"05:56 PM","moonrise":"09:36 PM","moonset":"09:33 AM","moon_phase":"Waning
+        Gibbous","moon_illumination":91,"is_moon_up":0,"is_sun_up":0},"hour":[{"time_epoch":1706522400,"time":"2024-01-29
+        04:00","temp_c":11.3,"temp_f":52.3,"is_day":0,"condition":{"text":"Clear ","icon":"//cdn.weatherapi.com/weather/64x64/night/113.png","code":1000},"wind_mph":1.3,"wind_kph":2.2,"wind_degree":300,"wind_dir":"WNW","pressure_mb":1028.0,"pressure_in":30.36,"precip_mm":0.0,"precip_in":0.0,"snow_cm":0.0,"humidity":59,"cloud":0,"feelslike_c":11.6,"feelslike_f":52.8,"windchill_c":11.6,"windchill_f":52.8,"heatindex_c":11.3,"heatindex_f":52.3,"dewpoint_c":3.5,"dewpoint_f":38.3,"will_it_rain":0,"chance_of_rain":0,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":2.7,"gust_kph":4.4,"uv":1.0}]}]}}'
+  recorded_at: Mon, 29 Jan 2024 21:03:19 GMT
 recorded_with: VCR 6.2.0

@@ -12,7 +12,7 @@ RSpec.describe 'Api::V0::RoadTripsController', type: :request do
       end
 
       it 'returns road trip with valid locations', :vcr do
-        post '/api/v0/road_trips', params: { origin: "denver,co", destination: "Houston,TX" }, headers: { Authorization: token }
+        post '/api/v0/road_trips', params: { road_trip: { origin: "denver,co", destination: "Houston,TX" } }, headers: { Authorization: token }
 
         expect(response).to have_http_status(:ok)
         road_trip = JSON.parse(response.body, symbolize_names: true)
