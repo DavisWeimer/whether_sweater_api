@@ -4,7 +4,36 @@ on:
     branches:
       - main
 jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:12
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+        ports:
+          - 5432:5432
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2.2'
+      - name: Install Dependencies
+        run: |
+          bundle install
+      - name: Setup Database
+        env:
+          RAILS_ENV: test
+        run: |
+          bin/rails db:create
+          bin/rails db:schema:load
+      - name: Run RSpec Tests
+        run: |
+          bundle exec rspec
   deploy:
+    needs: build-and-test
     name: Deploy app
     runs-on: ubuntu-latest
     steps:
