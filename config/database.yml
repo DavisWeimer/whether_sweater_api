@@ -12,9 +12,8 @@ development:
 test:
   <<: *default
   database: whether_sweater_api_test
-  host: localhost
-  username: davis-turing
-  password: postgres
+  username: <%= ENV['DB_USERNAME'] || `whoami`.strip %>
+  password: <%= ENV['DB_PASSWORD'] || '' %>
 
 production:
   <<: *default
