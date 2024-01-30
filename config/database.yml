@@ -13,8 +13,7 @@ test:
   <<: *default
   database: whether_sweater_api_test
   host: localhost
-  username: postgres
-  password: postgres
+  username: davis-turing
 
 production:
   <<: *default
