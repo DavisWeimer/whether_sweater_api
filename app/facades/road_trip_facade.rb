@@ -10,13 +10,22 @@ class RoadTripFacade
       forecast = WeatherFacade.get_destination_weather(destination_coords, arrival_hour, road_trip_params[:units])
     end
 
-    road_trip = RoadTrip.new(road_trip_params[:origin], road_trip_params[:destination], road_trip_time, forecast)
+    travel_time = arrival_time_parse(road_trip_time)
+    road_trip = RoadTrip.new(road_trip_params[:origin], road_trip_params[:destination], travel_time, forecast)
   end
 
   private
 
+  def self.arrival_time_parse(time)
+    hours, minutes = time.split(':').map(&:to_i)
+    hour_pluralization = hours == 1 ? 'hr' : 'hrs'
+    minutes_pluralization = minutes == 1 ? 'min' : 'mins'
+    "#{hours} #{hour_pluralization} #{minutes} #{minutes_pluralization}"
+  end
+
   def self.arrival_time_hour(time)
     hours, minutes = time.split(':').map(&:to_i)
     Time.now.advance(hours:, minutes:).hour
+    
   end
 end
