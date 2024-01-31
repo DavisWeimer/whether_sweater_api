@@ -245,4 +245,140 @@ http_interactions:
         Gibbous","moon_illumination":91,"is_moon_up":0,"is_sun_up":0},"hour":[{"time_epoch":1706522400,"time":"2024-01-29
         04:00","temp_c":11.3,"temp_f":52.3,"is_day":0,"condition":{"text":"Clear ","icon":"//cdn.weatherapi.com/weather/64x64/night/113.png","code":1000},"wind_mph":1.3,"wind_kph":2.2,"wind_degree":300,"wind_dir":"WNW","pressure_mb":1028.0,"pressure_in":30.36,"precip_mm":0.0,"precip_in":0.0,"snow_cm":0.0,"humidity":59,"cloud":0,"feelslike_c":11.6,"feelslike_f":52.8,"windchill_c":11.6,"windchill_f":52.8,"heatindex_c":11.3,"heatindex_f":52.3,"dewpoint_c":3.5,"dewpoint_f":38.3,"will_it_rain":0,"chance_of_rain":0,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":2.7,"gust_kph":4.4,"uv":1.0}]}]}}'
   recorded_at: Mon, 29 Jan 2024 21:03:19 GMT
+- request:
+    method: get
+    uri: http://api.weatherapi.com/v1/forecast.json?hour=7&key=<WEATHER KEY>&q=29.76078,%20-95.36952
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.11
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 403
+      message: Forbidden
+    headers:
+      Date:
+      - Tue, 30 Jan 2024 23:38:50 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '62'
+      Connection:
+      - keep-alive
+      Server:
+      - BunnyCDN-IL1-1070
+      Cdn-Pullzone:
+      - '93447'
+      Cdn-Uid:
+      - 8fa3a04a-75d9-4707-8056-b7b33c8ac7fe
+      Cdn-Requestcountrycode:
+      - US
+      Age:
+      - '0'
+      Cache-Control:
+      - public, max-age=5
+      Via:
+      - 1.1 varnish (Varnish/6.0)
+      X-Varnish:
+      - '122554149'
+      Cdn-Proxyver:
+      - '1.04'
+      Cdn-Requestpullsuccess:
+      - 'True'
+      Cdn-Requestpullcode:
+      - '403'
+      Cdn-Cachedat:
+      - 01/30/2024 23:38:50
+      Cdn-Edgestorageid:
+      - '1067'
+      Cdn-Status:
+      - '403'
+      Cdn-Requestid:
+      - ccaeea5c67e0b58312b0cfb33590238e
+      Cdn-Cache:
+      - MISS
+    body:
+      encoding: UTF-8
+      string: '{"error":{"code":2008,"message":"API key has been disabled."}}'
+  recorded_at: Tue, 30 Jan 2024 23:38:50 GMT
+- request:
+    method: get
+    uri: http://api.weatherapi.com/v1/forecast.json?hour=8&key=<WEATHER KEY>&q=29.76078,%20-95.36952
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.11
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 31 Jan 2024 00:35:15 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      Server:
+      - BunnyCDN-IL1-1029
+      Cdn-Pullzone:
+      - '93447'
+      Cdn-Uid:
+      - 8fa3a04a-75d9-4707-8056-b7b33c8ac7fe
+      Cdn-Requestcountrycode:
+      - US
+      Age:
+      - '0'
+      Cache-Control:
+      - public, max-age=180
+      Via:
+      - 1.1 varnish (Varnish/6.0)
+      X-Weatherapi-Qpm-Left:
+      - '999951'
+      X-Varnish:
+      - '659784173'
+      Cdn-Proxyver:
+      - '1.04'
+      Cdn-Requestpullsuccess:
+      - 'True'
+      Cdn-Requestpullcode:
+      - '200'
+      Cdn-Cachedat:
+      - 01/31/2024 00:35:15
+      Cdn-Edgestorageid:
+      - '871'
+      Cdn-Status:
+      - '200'
+      Cdn-Requestid:
+      - 255213d93f93737ba3f91764ef613e69
+      Cdn-Cache:
+      - MISS
+    body:
+      encoding: ASCII-8BIT
+      string: '{"location":{"name":"Houston","region":"Texas","country":"United States
+        of America","lat":29.76,"lon":-95.37,"tz_id":"America/Chicago","localtime_epoch":1706661264,"localtime":"2024-01-30
+        18:34"},"current":{"last_updated_epoch":1706661000,"last_updated":"2024-01-30
+        18:30","temp_c":20.0,"temp_f":68.0,"is_day":0,"condition":{"text":"Clear","icon":"//cdn.weatherapi.com/weather/64x64/night/113.png","code":1000},"wind_mph":9.4,"wind_kph":15.1,"wind_degree":250,"wind_dir":"WSW","pressure_mb":1021.0,"pressure_in":30.16,"precip_mm":0.0,"precip_in":0.0,"humidity":37,"cloud":0,"feelslike_c":20.0,"feelslike_f":68.0,"vis_km":16.0,"vis_miles":9.0,"uv":1.0,"gust_mph":13.9,"gust_kph":22.3},"forecast":{"forecastday":[{"date":"2024-01-30","date_epoch":1706572800,"day":{"maxtemp_c":20.4,"maxtemp_f":68.6,"mintemp_c":11.6,"mintemp_f":52.9,"avgtemp_c":15.4,"avgtemp_f":59.6,"maxwind_mph":6.7,"maxwind_kph":10.8,"totalprecip_mm":0.0,"totalprecip_in":0.0,"totalsnow_cm":0.0,"avgvis_km":10.0,"avgvis_miles":6.0,"avghumidity":52,"daily_will_it_rain":0,"daily_chance_of_rain":0,"daily_will_it_snow":0,"daily_chance_of_snow":0,"condition":{"text":"Partly
+        Cloudy ","icon":"//cdn.weatherapi.com/weather/64x64/day/116.png","code":1003},"uv":5.0},"astro":{"sunrise":"07:13
+        AM","sunset":"05:57 PM","moonrise":"10:28 PM","moonset":"09:59 AM","moon_phase":"Waning
+        Gibbous","moon_illumination":84,"is_moon_up":0,"is_sun_up":0},"hour":[{"time_epoch":1706623200,"time":"2024-01-30
+        08:00","temp_c":11.8,"temp_f":53.3,"is_day":1,"condition":{"text":"Overcast
+        ","icon":"//cdn.weatherapi.com/weather/64x64/day/122.png","code":1009},"wind_mph":4.7,"wind_kph":7.6,"wind_degree":250,"wind_dir":"WSW","pressure_mb":1024.0,"pressure_in":30.24,"precip_mm":0.0,"precip_in":0.0,"snow_cm":0.0,"humidity":58,"cloud":100,"feelslike_c":11.3,"feelslike_f":52.4,"windchill_c":11.3,"windchill_f":52.4,"heatindex_c":11.8,"heatindex_f":53.3,"dewpoint_c":3.7,"dewpoint_f":38.6,"will_it_rain":0,"chance_of_rain":0,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":8.8,"gust_kph":14.2,"uv":3.0}]}]}}'
+  recorded_at: Wed, 31 Jan 2024 00:35:15 GMT
 recorded_with: VCR 6.2.0
