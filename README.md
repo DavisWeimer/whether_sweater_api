@@ -36,8 +36,7 @@ The Whether, Sweater? Rails API provides seamless access to city weather forecas
 - [Acknowledgements](#acknowledgements)
 - [Check the deployment out here](#check-the-deployment-out-here)
 
-<h1 id="getting-started">Getting Started</h1>
-
+# Getting Started
 To get a local copy up and running, git clone and follow these steps.
 
 1. Install the gems
@@ -49,8 +48,7 @@ bundle install
 rails db:{drop,create,migrate,seed}
 ```
 
-<h1 id="configuration">Configuration</h1>
-
+# Configuration
 You will need to register and or obtain API keys from:
 - The Weather API — https://www.weatherapi.com/
 - The MapQuest API — https://developer.mapquest.com/documentation/
@@ -88,10 +86,9 @@ rails s
 http://localhost:3000/
 ```
 
-<h1 id="endpoints-available">Endpoints Available</h1>
-
+# Endpoints Available
 <div align='center'>  
-  <h2 id="1-user-registration-trip">1. User Registration Trip</h2>
+  <h2>1. User Registration Trip</h2>
 </div>
 
 <table align="center">
