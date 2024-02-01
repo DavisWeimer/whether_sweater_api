@@ -1,45 +1,40 @@
-# Whether, Sweater? API
-![Tests](https://badgen.net/badge/tests/passing/green?icon=github)
-![Commits](https://badgen.net/github/last-commit/DavisWeimer/whether_sweater_api?icon=github)
-[![Ruby Style Guide](https://img.shields.io/badge/code_style-rubocop-brightgreen.svg)](https://github.com/rubocop/rubocop)
+<div align='center'>
+  <img src="https://github.com/DavisWeimer/whether-sweater-fe/assets/128326999/be371417-729a-4f97-a5ba-72a6e43a0344" style="width: 400px" />
 
-Whether, Sweater? API is built to expose endpoints for a Frontend app looking to:
-- Get data about weather in a requested City
-- Create, Authenticate, and Generate unique API Keys for it's Users
-- Create Road Trips for it's Users
-#### *Note*: An API key is returned upon a successful User Registration (See [User Registration](#2-user-registration))
-## Ruby/Rails version<br>
-`Ruby 3.2.2`<br>
-`Rails 7.0.7.2`
+  ![GitHub last commit](https://img.shields.io/github/last-commit/DavisWeimer/whether_sweater_api?style=plastic)
+  ![Gem Version](https://img.shields.io/gem/v/rails?style=plastic&label=rails)
+  ![Static Badge](https://img.shields.io/badge/tests-passing-green?style=plastic&color=4CBB17)
 
-## Built with<br>
-![Ruby](https://img.shields.io/badge/ruby-%23CC342D.svg?style=for-the-badge&logo=ruby&logoColor=white)
-![Postgresql](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
-![Rails](https://img.shields.io/badge/rails-%23CC0000.svg?style=for-the-badge&logo=ruby-on-rails&logoColor=white)
-![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
-![Postman Badge](https://img.shields.io/badge/Postman-FF6C37?logo=postman&logoColor=fff&style=for-the-badge)
+  #### Let's Connect!
+  <a target="_blank" href="https://www.linkedin.com/in/davis-weimer/" rel="noopener noreferrer"><img src="https://img.shields.io/badge/-LinkedIn-303030?style=for-the-badge&logo=Linkedin&logoColor=00C6BA"></img></a>
+  <a target="_blank" href="mailto:davisweimer@gmail.com" rel="noopener noreferrer"><img src="https://img.shields.io/badge/-Gmail-303030?style=for-the-badge&logo=Gmail&logoColor=00C6BA"></img></a>
+  <a target="_blank" href="https://www.dw-portfolio.com/" rel="noopener noreferrer"><img src="https://img.shields.io/badge/-Portfolio-303030?style=for-the-badge&logo=Vercel&logoColor=00C6BA"></img></a>
+</div>
 
-Getting Started
--------------
-To get a local copy, follow these steps
+# Introduction
+The Whether, Sweater? Rails API provides seamless access to city weather forecasts and supports robust JWT-based user authentication, enabling personalized road trip planning in a single, cohesive platform.
 
-## <b>Installation</b>
+# Features
+- **User Authentication**: Secure registration, login/logout functionality using JWT sessions.
+- **Weather Forecasting**: Select a city to view its current weather and upcoming forecast.
+- **Road Trip Planning**: Input your trip details to receive estimated travel times and weather conditions upon arrival.
 
-1. Fork the Project
-2. Clone the repo (SSH) 
-```shell 
-git@github.com:DavisWeimer/whether_sweater_api.git 
-```
-3. Install the gems
+# Built with<br>
+<img src="https://skillicons.dev/icons?i=rails,ruby,postgres,vscode,postman" alt="My languages"/>
+
+# Getting Started
+To get a local copy up and running, git clone and follow these steps.
+
+1. Install the gems
 ```ruby
 bundle install
 ```
-4. Create the database
+2. Create the database
 ```ruby
 rails db:{drop,create,migrate,seed}
 ```
 
-## <b>Configuration</b>
+# Configuration
 
 You will need to register and or obtain API keys from:
 - The Weather API — https://www.weatherapi.com/
@@ -78,15 +73,283 @@ rails s
 http://localhost:3000/
 ```
 
-## <b>Endpoints Available</b>
-### 1. Get weather for a city
-Request:
-```ruby
-GET /api/v0/forecast?location=cincinatti,oh
+# Endpoints Available
+
+<div align='center'>  
+  <h2>1. User Registration Trip</h2>
+</div>
+
+<table align="center">
+<tr>
+<th width="500px">
+<small>✍️ Example Request</small>
+</th>
+<th width="500px">
+<small>
+⚠️ Required
+</small>
+</th>
+</tr>
+<tr>
+<td>
+  
+```
+POST /signup
 Content-Type: application/json
 Accept: application/json
 ```
-Response:
+
+</td>
+<td>
+  
+`Body:`
+  
+```json
+{
+    "user": {
+        "email": "test@test.com",
+        "password": "password"
+    }
+}
+```
+</td>
+</tr>
+<tr>
+<th colspan="2">
+📦 <b>Example Response</b>
+</th>
+</tr>
+<tr>
+<td colspan="2">
+<details>
+<summary>
+🟢 Status <code>200</code> : Successful Response
+</summary>
+<br>
+
+`Body:`
+  
+```json
+{
+    "status": {
+        "code": 200,
+        "message": "Signed up sucessfully."
+    },
+    "data": {
+        "id": 3,
+        "email": "test@test.com",
+        "created_at": "2024-01-31T17:08:07.655Z",
+        "created_date": "01/31/2024"
+    }
+}
+```
+</details>
+</td>
+</tr>
+</table>
+
+<div align='center'>  
+  <h2>2. User Login Trip</h2>
+</div>
+
+<table align="center">
+<tr>
+<th width="500px">
+<small>✍️ Example Request</small>
+</th>
+<th width="500px">
+<small>
+⚠️ Required
+</small>
+</th>
+</tr>
+<tr>
+<td>
+  
+```
+POST /login
+Content-Type: application/json
+Accept: application/json
+```
+
+</td>
+<td>
+
+`Body:`
+
+```json
+{
+    "user": {
+        "email": "test@test.com",
+        "password": "password"
+    }
+}
+```
+</td>
+</tr>
+<tr>
+<th colspan="2">
+📦 <b>Example Response</b>
+</th>
+</tr>
+<tr>
+<td colspan="2">
+<details>
+<summary>
+🟢 Status <code>200</code> : Successful Response
+</summary>
+<br>
+  
+`Body:`
+
+```json
+{
+    "status": {
+        "code": 200,
+        "message": "Logged in sucessfully."
+    },
+    "data": {
+        "id": 2,
+        "email": "test@test.com",
+        "created_at": "2024-01-31T16:15:38.953Z",
+        "created_date": "01/31/2024"
+    }
+}
+```
+
+`Headers:`
+
+```json
+{
+  "Authorization": "Bearer eyJhbGciO..."
+}
+```
+</details>
+</td>
+</tr>
+</table>
+
+<div align='center'>  
+  <h2>3. User Logout Trip</h2>
+</div>
+
+<table align="center">
+<tr>
+<th width="500px">
+<small>✍️ Example Request</small>
+</th>
+<th width="500px">
+<small>
+⚠️ Required
+</small>
+</th>
+</tr>
+<tr>
+<td>
+  
+```
+DELETE /logout
+Content-Type: application/json
+Accept: application/json
+```
+
+</td>
+<td>
+
+`Headers:`
+
+```json
+{
+  "Authorization": "Bearer eyJhbGciO..."
+}
+```
+</td>
+</tr>
+<tr>
+<th colspan="2">
+📦 <b>Example Response</b>
+</th>
+</tr>
+<tr>
+<td colspan="2">
+<details>
+<summary>
+🟢 Status <code>200</code> : Successful Response
+</summary>
+<br>
+  
+`Body:`
+
+```json
+{
+    "status": 200,
+    "message": "Logged out successfully."
+}
+```
+</details>
+</td>
+</tr>
+</table>
+
+<div align='center'>  
+  <h2>4. Get Weather for a City</h2>
+  <h4>⚠️ Requires Bearer Token</h4>
+</div>
+
+<table align="center">
+<tr>
+<th width="500px">
+<small>✍️ Example Request</small>
+</th>
+<th width="500px">
+<small>
+📂 Required
+</small>
+</th>
+</tr>
+<tr>
+<td>
+  
+```
+GET /api/v0/forecast?location=Denver,CO
+Content-Type: application/json
+Accept: application/json
+```
+
+</td>
+<td>
+
+`Params:`
+```json
+{
+  "location": "Denver, CO"
+}
+```
+
+`Headers:`
+  
+```json
+{
+  "Authorization": "Bearer eyJhbGciO..."
+}
+```
+</td>
+</tr>
+<tr>
+<th colspan="2">
+📦 <b>Example Response</b>
+</th>
+</tr>
+<tr>
+<td colspan="2">
+<details>
+<summary>
+🟢 Status <code>200</code> : Successful Response
+</summary>
+<br>
+
+`Body:`
+  
 ```json
 {
     "data": {
@@ -118,92 +381,193 @@ Response:
       }
 }
 ```
-### 2. User Registration
-Request:
-```ruby
-POST /api/v0/users
-Content-Type: application/json
-Accept: application/json
+</details>
+</td>
+</tr>
+</table>
 
-{
-  "email": "whatever@example.com",
-  "password": "password",
-  "password_confirmation": "password"
-}
-```
-Response:
-`status: 201`<br>
-Body:
-```json
-{
-  "data": {
-    "type": "users",
-    "id": "1",
-    "attributes": {
-      "email": "whatever@example.com",
-      "api_key": "t1h2i3s4_i5s6_l7e8g9i10t11"
-    }
-  }
-}
-```
-### 3. Login
-Request:
-```ruby
-POST /api/v0/sessions
-Content-Type: application/json
-Accept: application/json
+<div align='center'>  
+  <h2>5. Create a Road Trip</h2>
+  <h4>⚠️ Requires Bearer Token</h4>
+</div>
 
-{
-  "email": "whatever@example.com",
-  "password": "password"
-}
+<table align="center">
+<tr>
+<th width="500px">
+<small>✍️ Example Request</small>
+</th>
+<th width="500px">
+<small>
+📂 Required
+</small>
+</th>
+</tr>
+<tr>
+<td>
+  
 ```
-Response:
-`status: 200`
-Body:
-```json
-{
-  "data": {
-    "type": "users",
-    "id": "1",
-    "attributes": {
-      "email": "whatever@example.com",
-      "api_key": "t1h2i3s4_i5s6_l7e8g9i10t11"
-    }
-  }
-}
-```
-### 4. Create Road Trip
-Request:
-```ruby
 POST /api/v0/road_trip
 Content-Type: application/json
 Accept: application/json
+```
 
-body:
+</td>
+<td>
 
+`Headers:`
+  
+```json
 {
-  "origin": "Cincinatti,OH",
-  "destination": "Chicago,IL",
-  "api_key": "t1h2i3s4_i5s6_l7e8g9i10t11"
+  "Authorization": "Bearer eyJhbGciO..."
 }
 ```
-Response:
+
+`Body:`
+
+```json
+{
+  "origin": "Denver,CO",
+  "destination": "Chicago,IL",
+}
+```
+</td>
+</tr>
+<tr>
+<th colspan="2">
+📦 <b>Example Response</b>
+</th>
+</tr>
+<tr>
+<td colspan="2">
+<details>
+<summary>
+🟢 Status <code>200</code> : Successful Response
+</summary>
+<br>
+
+`Body:`
+  
 ```json
 {
     "data": {
-        "id": "null",
+        "id": null,
         "type": "road_trip",
         "attributes": {
-            "start_city": "Cincinatti, OH",
-            "end_city": "Chicago, IL",
-            "travel_time": "04:40:45",
+            "start_city": "Denver,CO",
+            "end_city": "Chicago,IL",
+            "travel_time": "13 hrs 40 mins",
             "weather_at_eta": {
-                "datetime": "2023-04-07 23:00",
-                "temperature": 44.2,
-                "condition": "Cloudy with a chance of meatballs"
+                "datetime": "2024-02-01 11:56",
+                "condition": "Partly cloudy",
+                "temperature": 48.0
             }
         }
     }
 }
 ```
+</details>
+</td>
+</tr>
+</table>
+
+<div align='center'>  
+  <h2>6. Get Photo of City</h2>
+  <h4>⚠️ Requires Bearer Token</h4>
+</div>
+
+<table align="center">
+<tr>
+<th width="500px">
+<small>✍️ Example Request</small>
+</th>
+<th width="500px">
+<small>
+📂 Required
+</small>
+</th>
+</tr>
+<tr>
+<td>
+  
+```
+GET /api/v0/backgrounds?location=New+York+City,+NY
+Content-Type: application/json
+Accept: application/json
+```
+
+</td>
+<td>
+
+`Params:`
+```json
+{
+  "location": "New York City, NY"
+}
+```
+
+`Headers:`
+  
+```json
+{
+  "Authorization": "Bearer eyJhbGciO..."
+}
+```
+</td>
+</tr>
+<tr>
+<th colspan="2">
+📦 <b>Example Response</b>
+</th>
+</tr>
+<tr>
+<td colspan="2">
+<details>
+<summary>
+🟢 Status <code>200</code> : Successful Response
+</summary>
+<br>
+
+`Body:`
+  
+```json
+{
+    "data": {
+        "id": null,
+        "type": "image",
+        "attributes": {
+            "image": {
+                "location": "New York City, NY",
+                "image_url": "https://images.unsplash.com/photo-1633...",
+                "credit": {
+                    "source": "https://unsplash.com/photos/a-view-of-a-city...",
+                    "author": "Gabo Romay",
+                    "portfolio": null
+                }
+            }
+        }
+    }
+}
+```
+</details>
+</td>
+</tr>
+</table>
+
+# Contributing
+Contributions are what make the open-source community such an amazing place to create in. Any contributions you make are **greatly appreciated**.
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+# Acknowledgements
+- [Weather API](https://www.weatherapi.com/) - Weather data source.
+- [Mapquest API](https://developer.mapquest.com/) - Location data source.
+- [Unsplash API](https://unsplash.com/) - Photo source.
+- [React Documentation](https://reactjs.org/) - For React resources and tutorials.
+
+
+# Check the deployment out here:
+#### https://whether-sweater-fe.vercel.app/
