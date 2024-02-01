@@ -11,7 +11,7 @@
   <a target="_blank" href="https://www.dw-portfolio.com/" rel="noopener noreferrer"><img src="https://img.shields.io/badge/-Portfolio-303030?style=for-the-badge&logo=Vercel&logoColor=00C6BA"></img></a>
 </div>
 
-# Introduction
+<h1 id="introduction">Introduction</h1>
 The Whether, Sweater? Rails API provides seamless access to city weather forecasts and supports robust JWT-based user authentication, enabling personalized road trip planning in a single, cohesive platform.
 
 # Features
@@ -22,7 +22,22 @@ The Whether, Sweater? Rails API provides seamless access to city weather forecas
 # Built with<br>
 <img src="https://skillicons.dev/icons?i=rails,ruby,postgres,vscode,postman" alt="My languages"/>
 
-# Getting Started
+# Table of Contents
+- [Getting Started](#getting-started)
+- [Configuration](#configuration)
+- [Endpoints Available](#endpoints-available)
+  - [1. User Registration Trip](#1-user-registration-trip)
+  - [2. User Login Trip](#2-user-login-trip)
+  - [3. User Logout Trip](#3-user-logout-trip)
+  - [4. Get Weather for a City](#4-get-weather-for-a-city)
+  - [5. Create a Road Trip](#5-create-a-road-trip)
+  - [6. Get Photo of City](#6-get-photo-of-city)
+- [Contributing](#contributing)
+- [Acknowledgements](#acknowledgements)
+- [Check the deployment out here](#check-the-deployment-out-here)
+
+<h1 id="getting-started">Getting Started</h1>
+
 To get a local copy up and running, git clone and follow these steps.
 
 1. Install the gems
@@ -34,7 +49,7 @@ bundle install
 rails db:{drop,create,migrate,seed}
 ```
 
-# Configuration
+<h1 id="configuration">Configuration</h1>
 
 You will need to register and or obtain API keys from:
 - The Weather API — https://www.weatherapi.com/
@@ -73,10 +88,10 @@ rails s
 http://localhost:3000/
 ```
 
-# Endpoints Available
+<h1 id="endpoints-available">Endpoints Available</h1>
 
 <div align='center'>  
-  <h2>1. User Registration Trip</h2>
+  <h2 id="1-user-registration-trip">1. User Registration Trip</h2>
 </div>
 
 <table align="center">
@@ -86,7 +101,7 @@ http://localhost:3000/
 </th>
 <th width="500px">
 <small>
-⚠️ Required
+📂 Required
 </small>
 </th>
 </tr>
@@ -159,7 +174,7 @@ Accept: application/json
 </th>
 <th width="500px">
 <small>
-⚠️ Required
+📂 Required
 </small>
 </th>
 </tr>
@@ -240,7 +255,7 @@ Accept: application/json
 </th>
 <th width="500px">
 <small>
-⚠️ Required
+📂 Required
 </small>
 </th>
 </tr>
