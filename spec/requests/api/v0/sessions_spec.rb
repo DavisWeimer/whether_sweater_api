@@ -42,5 +42,3 @@ end
 def token
   response.header["Authorization"]
 end
-
-# Don't mind me, I'm just a comment made to demo the CI/CD pipeline
